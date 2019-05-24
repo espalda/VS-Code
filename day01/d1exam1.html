@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!-- html 파일 표준, 기본 건물 골격 브라우저 버전마다 보이는 것이 다르다 -->
+<html lang="en">
+<head> <!-- 머리말 -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body> <!-- 본문 -->
+<!-- html 에서는 엔터와 여러개의 공백이 하나의 공백으로 인식된다
+P 한 문장, 태그 위와 아래에 공백이 좀 넓다
+br 태그 위와 아래의 공백이 좁다-->
+
+<h1>제목1</h1>
+<h2>제목2</h2>
+<h3>제목3</h3>
+<h4>제목4</h4>
+<h5>제목5</h5>
+<h6>제목6</h6>
+<!-- css에서 크기 굵기 색상 지정 가능 -->
+
+<p>안녕하세요 만나서 반갑습니다.</p> 
+<p>제 <i>이름</i>은              <br><b>뚠뚠이</b>입니다.</p>
+</p>
+저도 만나서 반갑습니다
+<hr>
+<div>
+안녕하세요 제 이름은 개미입니다
+</div>
+저도 만나서 반갑습니다. <br>
+<img src = "" alt = "">
+<img src = "/image/cat.jpg" alt = "" width="100px">
+<img src = "../image/cat.jpg" alt ="">
+<!-- 버튼에서 꼭 기억해야 할 사항
+일반적인 곳에서는 문제가 안되는데 form 태그 안에서는 다음 내용을 기억해야한다.
+
+form 태그 안이 아닌곳에서는 button에 type을 지정 안하는 경우 type에 button이 적용된다.
+그런데 form 태그 안에서는 버튼 타입 지정을 안하는 경우 type이 submit으로 적용된다.
+따라서 form 태그 안에서 일반 버튼으로 처리하고 싶으면 type을 button 으로 꼭 지정해야한다.
+-->
+<button>버튼</button>
+<form action="/test" method="GET">
+	<button>타입지정x 버튼</button> <!-- 자동으로 submit이 적용-->
+	<button type="button"> 타입지정ok 버튼</button>
+</form>
+
+
+</body>
+</html>

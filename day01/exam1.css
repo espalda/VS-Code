@@ -1,0 +1,13 @@
+div{
+    height: 500px ;
+    /* div 는 block 태그라서 가로 길이를 따로 지정하지 않아도 된다
+    
+    display: inline-block;
+    width: 100%;
+
+    border-style: solid;
+    border-color: blue;
+    border-width: 1px;
+    */
+    border: 1px solid blue;
+}
