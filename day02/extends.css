@@ -1,0 +1,29 @@
+/* 태그 클래스명, 태그 아이디명, 아이디명 클래스명
+태그&&클래스명, 태그&&아이디명, 아이디명&&클래스명일 때 적용
+b태그이면서 클래스명이 italic 인 경우 b.italic 을 적용한다-*/
+b.italic{
+	font-style: italic;
+}
+
+body b{ /*우선순위 -1*/
+	color: green;
+}
+
+body>b{ /*우선순위 -2*/
+    font-weight: 900;
+    color: red;
+}
+
+b{ /*우선순위 -3*/
+	/* 같은 속성끼리 충돌이나면 오버라이딩 */
+	font-weight:100; 
+	color: blue;
+}
+body > div > a{
+	text-decoration: none;
+	font-weight: bold;
+	color:yellowgreen;
+}
+#id{
+	font-weight: bold;
+}

@@ -1,0 +1,32 @@
+div{
+	/* box-sizing: border-box;가 없으면 width와 height는 컨텐츠의 가로와 세로에 해당한다.
+	박스의 크기는 패딩+컨텐츠+테두리 이기때문에 
+	52px = 0px + 50px + 1px(위) + 1px(아래) 이다 */
+	display:inline-block;
+	height:50px;
+	width:50px;
+	border: 1px solid rgb(68, 0, 0);
+	box-sizing: border-box;
+	background-color: red;
+	
+	text-align: center;
+	font-size: 25px;
+	color: white;
+	/* box-sizing: border-box;가 있다면
+	width와 height는 박스크기의 가로와 세로에 해당한다.
+	따라서 50px = 0px + 컨텐츠?? + 1px(위) + 1px(아래)
+	로 컨텐츠는 48 픽셀이 된다. */
+}
+.box:nth-child(3n-1){
+background-color: green;
+border-color: green;
+position: relative;
+}
+.box:nth-child(2){
+top: 20px;
+left: 20px;
+}
+.box:nth-child(5){
+	right: 20px;
+	bottom: -20px;
+	}
