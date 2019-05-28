@@ -1,11 +1,12 @@
 body{
-font-weight: 400; /* 글자 굵기*/
-
-/* font-size: 15px; 글자 크기*/
+font-weight: 400; /* 글자 굵기 */
+/* font-size: 15px; 글자 크기 */
 font-size : 1.5em;
 text-decoration: underline; /*밑줄*/
-/* color: #ff0000;
-color: red; */
+/*
+color: #ff0000;
+color: red;
+*/
 color: rgb(158, 190, 222);
 text-align: right;
 }

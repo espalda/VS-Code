@@ -1,0 +1,23 @@
+.box{
+	display: inline-block;
+	border: 1px dotted lightseagreen;
+	background-color: whitesmoke;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	z-index: 2;
+}
+.box:nth-child(2){
+	top: 50px;
+	left: 50px;
+	border-color: royalblue;
+	z-index: 2;
+}
+.box:nth-child(3){
+	top: 100px;
+	left: 100px;
+	border-color: cornflowerblue;
+	z-index: 1;
+}
+/*z-index 는 컨텐츠들이 겹필때 누구를 위로 보내고
+누구를 아래로 보낼지 결정하는 값으로 클수록 위로 간다.*/

@@ -9,11 +9,7 @@ input:focus{
 		color:blue;
 		background-color: rgba(25, 97, 155, 0.0.500)
 }
-
-#form>input:nth-child(even){
-	border:1px solid royalblue;
-	color:greenyellow;
-	/* 4를쓰면 top을 기준으로 시계방향으로 적용
+/* 4를쓰면 top을 기준으로 시계방향으로 적용
 	top > right > bottom > left 순으로 적용
 	3개를 쓰면 top을 기준으로 시계방향으로 적용
 	top > right > bottom > left(right의 값을 가져옴)
@@ -21,6 +17,11 @@ input:focus{
 	top > right > bottom (top의 값) > left(right의 값)
 	1개를 쓰면 top을 기준으로 시계방향으로 적용
 	해당값이 모든 방향에 적용	*/
+
+#form>input:nth-child(even){
+	border:1px solid royalblue;
+	color:greenyellow;
+	
 	padding: 10px 20px 30px 40px;
 }
 .box{

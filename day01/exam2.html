@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/day01/exam2.css">
     <title>Document</title>
 </head>
 <body>
-    
-	안녕하세요 개미🐜입니다 😜
-	<br>
-	<b>만나서 반가워 뚠뚠🐜🐜</b><br>
-    <div>
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-		</div>
+  <form action="/test" method="get">
+    <input type="text" name="id" id="">
+		<input type="password" name="" id="">
+		
+		<input type="checkbox" name="lunch" id="a" value="1번메뉴">
+		<label for="a"> 짬뽕 </label>
+		<input type="checkbox" name="lunch" id="b" value="2번메뉴">
+		<label for="b"> 짜장면 </label>
+
+		<input type="radio" name="gender" id="male" value="male" checked >
+		<label for="male"> 남자 </label>
+		<input type="radio" name="gender" id="female" value="female">
+		<label for="female"> 여자 </label>
+		<!-- 양자 택일 -->
+<hr>
+    <input type="file" name="" id=""><br> <!-- 첨부 파일 -->
+		<input type="submit" value="전송"> <!-- 서버로 데이터 전송-->
+		<input type="button" value="버튼">
+		<input type="reset" value="리셋">
+		<input type="email" name="" id="">
+		<input type="url" name="" id="">
+		<input type="hidden" name="" id=""> <!-- 서버에만 값을 보내고 화면에는 출력하지 않음 -->
+
+		<input type="range" name="" id=""> <!-- 범위 -->
+		<input type="color" name="" id=""> <!-- 색상 추출 -->
+		<input type="number" name="" id="">
+		<input type="month" name="" id="">
+	</form>
 </body>
 </html>
