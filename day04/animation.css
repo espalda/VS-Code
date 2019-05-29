@@ -1,0 +1,49 @@
+.hi{
+	font-size: 300%;
+	font-weight: bold;
+	animation-duration: 2s;
+	animation-iteration-count:  infinite;
+	animation-name: fontColor;
+	display: block;
+}
+.boom{
+	font-size: 500%;
+	font-weight: bold;
+	animation-duration: 2s;
+	animation-iteration-count:  infinite;
+	animation-name: fontSize;
+	display: block;
+	height: 100px;
+}
+.mix{
+	font-size: 500%;
+	font-weight: bold;
+	animation-duration: 2s;
+	animation-iteration-count:  infinite;
+	animation-name: mix;
+	display: block;
+	height: 100px;
+}
+@keyframes fontColor{
+	0% { color: cornflowerblue;}
+	33% { color: steelblue;}
+	66% { color: lightblue;}
+	100% { color: lightsteelblue;}
+}
+@keyframes fontSize{
+	from { font-size: 500%;}
+	50% { font-size: 100%;}
+	to	{ font-size: 500%;}	
+}
+@keyframes mix{
+	0% { color: cornflowerblue;
+				font-size: 500%;}
+	25% { color: steelblue;}
+	50% { color: lightblue;
+				font-size: 100%;}
+	75% { color: royalblue;
+
+	}
+	100% { color: lightsteelblue;
+				font-size: 500%;}
+}

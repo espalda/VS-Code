@@ -7,8 +7,8 @@ text-decoration: underline; /*밑줄*/
 color: #ff0000;
 color: red;
 */
-color: rgb(158, 190, 222);
-text-align: right;
+color: cornflowerblue;
+text-align: center;
 }
 body>div{
     font-size: 0px;
