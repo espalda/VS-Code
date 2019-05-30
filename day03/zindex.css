@@ -16,7 +16,7 @@
 .box:nth-child(3){
 	top: 100px;
 	left: 100px;
-	border-color: cornflowerblue;
+	border-color: red;
 	z-index: 1;
 }
 /*z-index 는 컨텐츠들이 겹필때 누구를 위로 보내고

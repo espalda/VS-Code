@@ -4,6 +4,7 @@
 /* 부모박스에 padding 처리하는게 더 편리*/
 .container1{
 	border: 1px solid black;
+	width: 100px;
 	height: 300px;
 	padding: 20px;
 }
@@ -15,6 +16,7 @@
 box-sizing 사용후 width는 박스의 가로*/
 
 .container2{
+	width: 100px;
 	border: 1px solid blue;
 	height: 300px;
 }
