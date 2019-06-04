@@ -6,22 +6,24 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<style>
-	*{
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
+		*{
+			box-sizing: border-box;
+		}
+	.container{
+		border: 1px solid salmon;
+		width: 100px;
+		height: 300px;
+		padding: 20px;
 	}
-	#wrap{
-		width: 500px;
-		height: 50px;
-		
-		border: 1px solid red;
+	.box{
+		border: 1px solid cornflowerblue;
+		height: 100%;
 	}
 	</style>
-
-	<!-- min-width 와 width차이 모르겠다 -->
 </head>
 <body>
-	<div id="wrap"></div>
+	<div class="container">
+	<div class="box"></div>
+</div>
 </body>
 </html>
