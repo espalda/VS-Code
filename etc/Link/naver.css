@@ -347,102 +347,217 @@ a.naver-green{
 
 
 
-/* [right-3]뉴스 시작*/
+/* [left-3] 시작*/
 .content-left3{
 	height: 246px;
 }
-.r3-main-list{
+.l3-top{
 	position: relative;
-	height: 44px;
+	height: 45px;
 	border-bottom: 1px solid #ebeef3;
 }
-.r3-left{
-	position: absolute;
-	padding: 13px 0 0 16px;
+.l3-bottom{
+	position: relative;
+	height: 199px;
+	overflow: hidden;
 }
-.r3-news{
-	display: block;
-	color: #000;
-	letter-spacing: -1px;
-	font-weight: 700;
-	font-size: 14px;
-	font-family: "돋움";
-	line-height: 20px;
+.l3-row{
+	height: 67px;
 }
-.r3-icon{
-	display: inline-block;
-	margin-left: 8px;
-	width: 5px;
-	height: 9px;
-	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png);
-	background-position: -256px -100px;
-	vertical-align: middle;
-}
-
-.r3-middle{
-	padding: 13px 0;
-}
-
-.r3-top-btn{
-	display: block;
+.l3-item{
 	float: left;
+	width: 123px;
+	padding: 21px 0 22px;
+	height: 67px;
+	border-right: 1px solid #ebeef3;
+	text-align: center;
+}
+.l3-white{
+	height: 199px;
+	width: 1px;
+	background-color: #ffffff;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.l3-bc{
+	width: 738px;
+	height: 1px;
+	background-color: #ebeef3;
+	position: absolute;
+}
+.c1{
+	top: 66px;
+}
+.c2{
+	top: 133px;
+}
+.l3-menulist{
+	height: 44px;
+	float: right;
+}
+.l3-menulist div{
+	float: left;
+}
+.l3-prev,
+.l3-next{ 
+	float: left;
+	border-left: 1px solid #ebeef3;
 	width: 44px;
 	height: 44px;
-	border-left: 1px solid #ebeef3;
+	cursor: pointer;
 }
-.r3-prev,
-.r3-next{
+.l3-prev>i,
+.l3-next>i{
 	display: inline-block;
+	margin: 14px 0 0 18px;
 	width: 8px;
 	height: 16px;
-	vertical-align: top;
-	margin: 14px 0 0 18px;
 	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png);
 }
-.r3-prev{
+.l3-prev>i{
 	background-position: -254px -24px;
 }
-.r3-next{
+.l3-next>i{
 	background-position: -102px -193px;
 }
-
-
-.r3-top-btn2{
+.l3-prev>i:hover{
+	background-position: -84px -193px;
+}
+.l3-next>i:hover{
+	background-position: -120px -193px;
+}
+.l3-list-item{
 	display: block;
-	float: left;
-	margin-right: 10px;
 	width: 32px;
 	height: 44px;
+	float: left;
+	margin-right: 10px;
 }
-.r3-setting,
-.r3-list,
-.r3-img{
-	display: inline-block;
+.l3-list-item>i{
 	width: 18px;
 	height: 18px;
-	vertical-align: top;
-	margin: 13px 0 0;
+	display: block;
+	margin-top: 13px;
 	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_newscast_v180511.png);
 }
-.r3-setting{
-	background-position: -28px -193px;
+.l3-item1{
+	background-position: -200px -124px;
 }
-.r3-list{
+.l3-item2{
 	background-position: 0 -193px;
 }
-.r3-img{
+.l3-item3{
+	background-position: -28px -193px;
+}
+.l3-item1.active,
+.l3-item1:hover{
 	background-position: -228px -124px;
 }
+.l3-item2:hover{
+	background-position: -228px -152px;
+}
+.l3-item3:hover{
+	background-position: -56px -193px;
+}
+/* [left-3] 끝*/
 
-/* 뉴스 끝 */
+
+/* [left-4] 시작*/
 .content-left4{
 	height: 884px;
+	position: relative;
 }
+.l4-top{
+	height: 45px;
+	border-bottom: 1px solid #ebeef3;
+}
+
+.l4-front{
+	float: left;  /* 가로의 길이 필요*/
+	position: relative;
+	width: 45px;
+	height: 44px;
+	cursor: pointer;
+  border-right: 1px solid #ebeef3;
+}
+.l4-middle{
+	width: 603px;
+	height: 44px;
+	float: left;
+	overflow: hidden;
+}
+.l4-end{
+	float: left;
+}
+.l4-ham{
+	display: inline-block;
+	position: absolute;
+	top: 15px;
+  left: 12px;
+	width: 20px;
+	height: 14px;
+	background-image: url(https://s.pstatic.net/static/www/img/2018/sp_themecast_v180607.png);
+	background-position: -218px -257px; 
+}
+.l4-ham:hover{
+	background-position: -248px -257px;
+}
+.l4-titem{
+	float: left;
+	height: 44px;
+	padding: 14px 7px 0;
+	margin-right: 10px;
+	letter-spacing: -1px;
+	font-size: 14px;
+	color: #666;
+	font-weight: bold;
+	cursor: pointer;
+}
+.l4-titem:hover{
+	color: black;
+}
+.l4-titem.active{
+	border-bottom: 3px solid #03cf5d;
+	color: #03cf5d;
+}
+
+/* [left-4] btm */
+.l4-bottom{
+	position: relative;
+	height: 837px;
+  padding: 18px 2px 3px 16px;
+}
+.l4-bottom::after{ /*부모의 높이를 지정하지 않았을 때*/
+	clear: both;
+	content: "";
+	display: block;
+}
+.l4-bitem{
+	position: relative;
+	float: left;
+	margin: 0 14px 19px 0;
+	width: 166px;
+	height: 185px;
+	border: 1px solid #888;
+}
+.bx2{
+	width: 346px;
+	height: 185px;
+}
+.bx3{
+	float: right;
+	width: 166px;
+	height: 389px;
+}
+
+/* [left-4] 끝 */
+
+/* [left-5] 시작 */
 .content-left5{
 	height: 130px;
 }
-
-
+/* [left-5] 끝 */
 
 
 /* 오른쪽 컨텐츠 1 - 로그인 기능 */
