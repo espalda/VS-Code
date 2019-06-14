@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+	.bg-black{background-color: black;}
+	.bg-blue{background-color: blue;}
+	.bg-red{background-color: red;}
+	.bg-yellow{background-color: yellow;}
+
+	.box{
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		border: 1px solid black;
+	}
+	.container{
+		font-size: 12px;
+	}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="box"></div>
+	<div class="container">
+		<input type="checkbox" value="black" onchange="setBgColor(this.value)">검정색<br>
+		<input type="checkbox" value="blue" onchange="setBgColor(this.value)">파란색<br>
+		<input type="checkbox" value="red" onchange="setBgColor(this.value)">빨간색<br>
+		<input type="checkbox" value="yellow" onchange="setBgColor(this.value)">노란색
+	</div>
+
+<script>
+		//전역배열 생성
+		var colorArray = [];
+		
+	function setBgColor(color){
+		//이벤트가 발생된 체크박스가 이전에 체크가 된 상태인지 아닌지를 확인
+		var idx = colorArray.indexOf(color);
+		//지금 체크된 경우 해당 색상 추가
+		if(idx == -1){
+			colorArray.push(color);
+		}
+		else{
+			//지금 체크가 해제된 경우 해당 색상 삭제
+			colorArray.splice(idx,1);
+		}
+		//클래스가 박스인 요소의 모든 객체들을 가져온다
+		var boxArray = document.getElementsByClassName('box');
+		//모든 박스 클래스에 색상 관련 클래스 제거
+			for(var i = 0; i<boxArray.length; i++){
+				boxArray[i].classList = 'box';
+			}
+		//배열에 저장된 색상을 순서대로 박스의 백경색으로 지정
+			for(var i=0; i<colorArray.length; i++){
+				boxArray[i].classList.add('bg-'+colorArray[i]);
+			}
+	}
+</script>
+</body>
+</html>

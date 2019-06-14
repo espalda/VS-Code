@@ -7,13 +7,14 @@
 	<title>Document</title>
 </head>
 <body>
-	<input type="text" id="test" value="">
-	<button onclick="message()">버튼</button>
+	<button onclick="ok()">확인</button>
+	<h1>안녕</h1>
+	<div id="content"></div>
+	<h1>Bye</h1>
 	<script>
-		function message(){
-			var num = document.getElementById('test');
-			alert(num.value); //경고창 생성
-			num.value = '';	//입력창 초기화
+		function ok(){
+			document.getElementById('content').innerHTML
+			= '<a href="#"> 내용 </a>'
 		}
 	</script>
 </body>

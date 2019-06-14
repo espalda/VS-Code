@@ -1,0 +1,8 @@
+input 태그의 한 종류인 checkbox 활용 방법
+모든 input 태그 요소들의 객체를 배열로 가져옴
+그 중 type 이 checkbox인 객체들 활용
+
+innerHtml은 html 코드를 원하는 부분에 넣은 예제
+location.href = 현재 url
+css 변경하는 방법 : 객체.style (인라인 style 방식)
+									객체.class(style 태그 또는 .css방식)

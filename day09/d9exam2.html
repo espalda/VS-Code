@@ -12,7 +12,7 @@
 				var num3 = document.getElementById('num3'); //수정하거나 설정할때는 빼고
 				
 				//숫자인지 아닐때 true면 0으로 처리
-				if(num1 == '' || isNaN(parseFloat(num1)))num1 = '0';		
+				if(num1 == '' || isNaN(parseFloat(num1)))num1 = '0';
 				if(num2 == '' || isNaN(parseFloat(num2)))num2 = '0';
 				
 				document.getElementById('num1').value = parseFloat(num1);
@@ -68,7 +68,7 @@
 		<input type="text" id="num1">+
 		<input type="text" id="num2">=
 		<input type="text" id="num3" readonly>
-		<button onclick="sum4()">더하기</button> <!-- 클릭했을때 실행되는 이벤트 -->
+		<button onclick="sum()">더하기</button> <!-- 클릭했을때 실행되는 이벤트 -->
 		
 </body>
 </html>

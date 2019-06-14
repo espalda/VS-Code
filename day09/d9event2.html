@@ -14,37 +14,41 @@
 	<script>
 		window.onload = function(){
 		}
-		function check(obj, length, min, max, error){
-			var val = obj.value;
-			
+		function checkYear(){
+			var year = document.getElementsByTagName('input')[0].value;
+			//4자리체크
+			if(year.length != 4){
+				alert('4자리를 입력하세요');
+				return;
+			}
+
+			//숫자만 입력했는지 체크
+			var iyear = parseInt(year);
+			if(isNaN(iyear) || iyear < 1000){
+				alert('숫자만 입력해야 합니다');
+				return;
+			}
+
+			//출생년도 범위체크
+			if(parseInt(year) <= 1800 && parseInt(year) > 2019){
+				alert('올바른 연도를 입력하세요');
+				return;
+			}
 		}
 
-		function checkLength(str,length){
-			str = ''+str;
-			if(str.length == length)	return true;
-			return false;
+		function checkMonth(){
+			var month = document.getElementsByTagName('input')[1].value;
+				if(month.length > 2){
+					alert('2자리 이하로 입력하세요');
+					return;
+				}
+
+				if(parseInt(month) < 1 || parseInt(month) > 12){
+					alert('올바른 연도를 입력하세요');
+					return;
+				}
 		}
 		
-		function checkInteger(str){
-			str = ''+str;
-			for(var j=0; j<str.length; j++){
-				var tmp = parseInt(str[j]);
-				if(isNaN(tmp))	return false;
-			}
-			return true;
-		}
-
-		function checkRange(min, max, val){
-			if(isNaN(min) || isNaN(max) || isNaN(val)) return false;
-			if(min > max){
-				var tmp = min;
-				min = max;
-				max = tmp;
-			}
-			if(val < min || val > max)	return false;
-			return true;
-		}
-
 	</script>
 </body>
 </html>
