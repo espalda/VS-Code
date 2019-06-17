@@ -42,3 +42,12 @@ java와 javascript의 차이점
 
 전역변수는 함수 외부에서 선언된 변수로, 프로그램 전체에서 접근할 수 있는 변수입니다.
 지역변수는 함수 내부에서 선언된 변수로, 함수가 실행되면 만들어지고 함수가 종료되면 소멸하는 변수입니다. 함수 외부에서는 접근할 수 없습니다.
+
+input 태그의 한 종류인 checkbox 활용 방법
+모든 input 태그 요소들의 객체를 배열로 가져옴
+그 중 type 이 checkbox인 객체들 활용
+
+innerHtml은 html 코드를 원하는 부분에 넣은 예제
+location.href = 현재 url
+css 변경하는 방법 : 객체.style (인라인 style 방식)
+									객체.class(style 태그 또는 .css방식)

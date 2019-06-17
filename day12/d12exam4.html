@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+ 
+  .box{
+    width: 100px;
+    height: 20px;
+    border: 3px solid black;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">00:00:00:00</div>
+    <button class="btn" onclick="start()">시작/스톱</button>
+    <button class="btn" onclick="reset()">리셋</button>
+</div>
+<script>
+  var isRunning = false;
+  var count = 0;
+  var id; //setInterval()를 통해 할당된 값을 저장
+		function start(){
+      //start 버튼를 누른 상황(stop에서 start로 동작)
+      if(!isRunning){
+        id = setInterval(timer,100);
+        isRunning = true;
+      }else{
+        isRunning = false;
+        clearInterval(id);
+      }
+    }
+    function reset(){
+      document.getElementsByClassName('box')[0].innerHTML = '00:00:00:00';
+      isRunning = false;
+      count = 0;
+    }  
+    function timer(){
+      if(isRunning){
+        var strCount = '00:00:00:00';
+        strCount = getTime(++count);
+        document.getElementsByClassName('box')[0].innerHTML = strCount;
+      }
+    }
+    //나누기, 모드함수, parseInt
+    function getTime(count){
+      var mm = count % 100;
+      count = parseInt(count/100);
+      var ss = count % 60;
+      count = parseInt(count/60);
+      var MM = count % 60;
+      count = parseInt(count/60);
+      var hh = count % 60;
+      count = parseInt(count/60);
+      return ''+getStr(hh)+':'+getStr(MM)+':'+getStr(ss)+':'+getStr(mm);
+    }
+    function getStr(num){
+      if(num < 10) return '0'+num;
+      else return num;
+    }
+</script>
+</body>
+</html>

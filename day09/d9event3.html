@@ -16,16 +16,12 @@
 		}
 		function check(obj, length, min, max, error){
 			var val = obj.value;
-
-
 		}
-
 		function checkLength(str,length){
 			str = ''+str;
 			if(str.length == length)	return true;
 			return false;
-		}
-		
+		}	
 		function checkInteger(str){
 			str = ''+str;
 			for(var j=0; j<str.length; j++){
@@ -34,7 +30,6 @@
 			}
 			return true;
 		}
-
 		function checkRange(min, max, val){
 			if(isNaN(min) || isNaN(max) || isNaN(val)) return false;
 			if(min > max){
@@ -45,7 +40,6 @@
 			if(val < min || val > max)	return false;
 			return true;
 		}
-
 	</script>
 </body>
 </html>
