@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .time-led{
+    font-size: 13px;
+    width: 105px;
+    height: 40px;
+    border: 3px solid black;
+    line-height: 40px;
+    text-align: right;
+    margin-bottom: 8px;
+    padding: 0 5px;
+  }
+  .btn{
+    margin-bottom: 8px;
+  }
+  .time-led2{
+    font-size: 13px;
+    width: 105px;
+    height: 30px;
+    border: 3px solid cornflowerblue;
+    line-height: 30px;
+    text-align: right;
+    padding: 0 5px;
+    margin-bottom: 3px;
+  }
+  </style>
+</head>
+<body>
+    <div class="time-led">00:00:00:00</div>
+    <button class="btn" onclick="runAndStop()">시작/기록</button>
+    <button class="btn" onclick="reset()">리셋</button>
+    <div class="container" id="container">
+      <div class="time-led2">00:00:00:00</div>
+      <div class="time-led2">00:00:00:00</div>
+      <div class="time-led2">00:00:00:00</div>
+    </div>
+
+<script>
+    var isRunning = false;
+    var mm = 0;
+    var ss = 0;
+    var MM = 0;
+    var hh = 0;
+    var id;
+    var checkCount = 0;
+    var timeArr = [];
+    //setInterval()를 통해 할당된 값을 저장
+   
+		function runAndStop(){
+      //start 버튼를 누른 상황(stop에서 start로 동작)
+      if(!isRunning){
+        id = setInterval(timer,10);
+        isRunning = true;
+      }else{
+      // [버튼을 두번이상 클릭하면 멈추는 기능을 막고 기록이 되도록 하는 기능]
+      // 시간문자열을 찍어주는 함수를 생성
+      // 객체안에 시간을 입력하게한다.
+        
+        timeArr.push(getTime());
+        checkCount++;
+        if(checkCount>3){
+          //4개 이상되면 레코드 박스를 추가해야함
+          container.innerHTML += '<div class="time-led2">00:00:00:00</div>';
+        }
+        //기록들을 화면에 출력하는 함수
+        printRecord();
+      }
+    }
+
+   
+
+    function reset(){
+      mm = 0;   ss = 0;   MM = 0;  hh = 0;
+      writeTime(document.getElementsByClassName('time-led')[0]);
+      isRunning = false;
+      checkCount = 0;
+      timeArr = [];
+      container.innerHTML = '<div class="time-led2">00:00:00:00</div>';
+      container.innerHTML += '<div class="time-led2">00:00:00:00</div>';
+      container.innerHTML += '<div class="time-led2">00:00:00:00</div>';
+    }
+
+    function timer(){
+      if(isRunning){
+        mm++;
+        writeTime(document.getElementsByClassName('time-led')[0]);
+      }
+    }
+
+    function getTime(count){
+      if(mm >= 100){
+        mm -= 100;
+        ss++;
+      }
+      if(ss >= 60){
+        ss -= 60;
+        MM++;
+      }
+      if(MM >= 60){
+        MM -= 60;
+        hh++;
+      }
+      return ''+getStr(hh)+':'+getStr(MM)+':'+getStr(ss)+':'+getStr(mm);
+    }
+
+    function getStr(num){
+      if(num < 10) return '0'+num;
+      else return num;
+    }
+
+    function writeTime(obj){
+      obj.innerHTML = getTime();
+    }
+
+    function printRecord(){
+      var recordArr = document.getElementsByClassName('time-led2');
+      for(var i=0; i<timeArr.length; i++){
+        recordArr[i].innerHTML = timeArr[timeArr.length-i-1];
+      }
+    }
+</script>
+</body>
+</html>
