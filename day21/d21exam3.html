@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>Document</title>
+	<style>
+		.message{
+			width: 200px;
+			height: 20px;
+			border: 1px solid darkblue;
+		}
+	</style>
+</head>
+<script>
+	$(document).ready(function(){
+		$('input').keydown(function(){
+		
+		});
+		$('input').keypress(function(){
+		
+		})
+		$('#pw2').keyup(function(){
+			var pw1 =$('#pw1').val();
+			var pw2 =$('#pw2').val();
+			var str = '';
+			if(pw1 != pw2){
+				str = '비밀번호가 일치하지 않습니다.';
+				$('#pwMsg').html(str);
+			}
+			else{
+				$('#pwMsg').html('비밀번호가 일치합니다.');
+			}
+		});
+	});
+</script>
+<body>
+	<div>
+		<input type="text" id="pw1">
+	</div>
+	<div>
+		<input type="text" id="pw2">
+	</div>
+		<div id="pwMsg"></div>
+</body>
+</html>
+
+
+<!--
+	
+-->

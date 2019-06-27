@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<title>Document</title>
+	<script>
+		$(document).ready(function(){
+			var date = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+			//페이지 로딩시 디폴트 1월로 맞춘다.
+			addDay(1);
+			$('#month').change(function(){
+				var month = $(this).val();
+				addDay(month);
+			});
+			function addDay(month){
+				var str = '';
+					for(var i =1; i<=date[month-1]; i++){
+						str += '<option value="'+i+'">'+i+'일'+'</option>'
+					}
+					$('#date').html(str);
+				}
+		});
+	</script>
+
+	<!-- base code
+	$(document).ready(function(){
+	
+	$('#month').click(function(){
+		var date = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		var month = $('#month').val();
+		var str = '';
+		for(var i=1; i<=date[month-1]; i++){
+			str += '<option>'+i +'일'+'</option>'			
+		}
+		$('#date').html(str);
+		});
+	});
+	-->
+</head>
+<body>
+	<select name="month" id="month">
+		<option value="1">01</option>
+		<option value="2">02</option>
+		<option value="3">03</option>
+		<option value="4">04</option>
+		<option value="5">05</option>
+		<option value="6">06</option>
+		<option value="7">07</option>
+		<option value="8">08</option>
+		<option value="9">09</option>
+		<option value="10">10</option>
+		<option value="11">11</option>
+		<option value="12">12</option>
+	</select>월
+	<select name="date" id="date">
+	</select>일
+
+</body>
+</html>

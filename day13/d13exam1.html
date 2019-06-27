@@ -5,35 +5,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
+	<style>
+	.display-none{
+		display: none;
+	}
+	.display-block{
+		display: block;
+	}
+	.color-black{
+		font-size: 12px;
+		color: cornflowerblue;
+	}
+	</style>
 </head>
 <body>
+	<button onclick="display('p')">클릭</button>
+	<button onclick="displayClassList('p')">클래스리스트</button>
+	<p class="display-none color-black" id="p">안녕하세요.</p>
 	<script>
-		var arr = [];
-		var stopwatch = {
-			mm:0, ss:0, MM:0, hh:0,	/* 스탑워치 객체의 멤버 변수들 */
-			getTime : function(){	/* 스탑워치의 시간을 문자열로 변환하는 메서드 */
-				return ''+this.getStr(this.hh)+':'+this.getStr(this.MM)
-					+':'+this.getStr(this.ss)+':'+this.getStr(this.mm);
-			},
-			getStr : function(num){	/* 두자리 이하의 숫자를 두자리 문자열로 만드는 메서드 */
-				if(num < 10) return '0'+num;
-      	else return num;
-			},
-			addTime : function(){	/* 시간을 0.01초 증가후 바로 자릿수를 계산하는 메서드*/
-				this.mm++;
-			if(this.mm >= 100){this.mm -= 100;this.ss++;}
-      if(this.ss >= 60){this.ss -= 60;this.MM++;}
-      if(this.MM >= 60){this.MM -= 60;this.hh++;}
-			}
-		};
-		function time(){
-				stopwatch.addTime();
-				document.getElementsByTagName('body')[0].innerHTML
-				= stopwatch.getTime();
-			}
-			setInterval(time,100);
-		
+	function display(id){
+		// id가 id인 요소의 클래스를 display-block으로 덮어 씀
+		// document.getElementById(id).classList = 'display-block';
+		// display-none과 display-block이 충돌이 나면 문제가 될수 있기 때문에 none을 지움
+		// document.getElementById(id).classList.remove('display-none');
+		// id가 id인 요소의 클래스 리스트에 display-block 클래스를 추가
+		// document.getElementById(id).classList.add('display-block');
+		// document.getElementById(id).classList.replace('display-none','display-block');
+		document.getElementById(id).classList.toggle('display-none');
+		//toggle 있으면 제거 없으면 추가
+	}
+
+	function displayClassList(id){
+		//id가 id인 요소의 클래스 리스트를 배열로 가져옴
+		var classList = document.getElementById(id).classList;
+		//클래스 리스트를 하나씩 꺼내 값을 확인
+		for(var i=0; i<classList.length; i++){
+			console.log(classList[i]);
+		}
+	}
 	</script>
-	
 </body>
 </html>

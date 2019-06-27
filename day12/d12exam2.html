@@ -5,39 +5,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-	<style>
-	.box1{
-		width: 200px;
-		height: 20px;
-		border: 1px solid black;
-	}
-	.box2{
-		width: 200px;
-		height: 300px;
-		border: 1px solid cornflowerblue;
-		position: absolute;
-		display: none;
-	}
-	.container{
-		position: relative;
-	}
-	.display-block{
-		display: block;
-	}
-	</style>
 </head>
 <body>
-	<div class="container">
-		<div class="box1" onmouseover="show()"></div>
-		<div class="box2" onmouseout="hide()"></div>
-	</div>
-	
+	<button onclick="ok()">확인</button>
+	<h1>안녕</h1>
+	<div id="content"></div>
+	<h1>Bye</h1>
 	<script>
-		function show(){
-			document.getElementsByClassName('box2')[0].classList.add('display-block');
-		}
-		function hide(){
-			document.getElementsByClassName('box2')[0].classList.remove('display-block');
+		function ok(){
+			document.getElementById('content').innerHTML
+			= '<a href="#"> 내용 </a>'
 		}
 	</script>
 </body>
