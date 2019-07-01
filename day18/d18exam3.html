@@ -6,8 +6,35 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
-	<script src="../js/d15exam.js"></script>
 </head>
+<script>
+	$(document).ready(function(){
+		$('#pw1').change(function(){
+			if(!checklength('#pw1',8,13)){
+				alert('비밀번호 길이를 8~13 사이로 입력하세요.');
+			}
+		})
+		$('#pw2').change(function(){
+			if(!equals('#pw1','#pw2')){
+				alert('비밀번호가 일치하지 않습니다.');
+			}else
+				alert('비밀번호가 일치합니다.');
+		})
+	});
+
+	function checklength(id,min,max){
+		var length = $(id).val().length;
+		if(length > max || length < min)
+			return false;
+		else return true;
+	}
+
+	function equals(sel1,sel2){
+		if($(sel1).val() == $(sel2).val())
+			return true;
+				return false;
+	}
+</script>
 <body>
 	<input type="text" id="pw1" placeholder="비밀번호">
 	<input type="text" id="pw2" placeholder="비밀번호확인">
