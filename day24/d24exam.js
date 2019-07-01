@@ -156,6 +156,10 @@ $(document).ready(function(){
 		}
 	})
 
+	function drawOpenBox(){
+		
+	}
+
 	function moreBoxOpen(){
 		moreBox();
 		tmpArr = copyArr(arr);

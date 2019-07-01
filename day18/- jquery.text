@@ -49,7 +49,7 @@ $(selector).hide(speed -time, callback -function);
 해당 속성의 값을 가져옴
 		$('선택자').prop(속성명);
 해당 속성의 값을 값1로 설정
-		$('선택자').prop(속성명,값1);
+		$('선택자').prop(속성jk명,값1);
 
 
 	조상들 검색
