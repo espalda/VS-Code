@@ -91,3 +91,5 @@ $(selector).hide(speed -time, callback -function);
 			// $().text(문자열) 요소의 텍스트를 설정함
 			// $().html() 요소의 html 코드를 가져옴
 			// $().html(문자열) 요소에  html 코드를 설정함
+
+			attr
