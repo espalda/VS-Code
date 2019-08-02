@@ -5,7 +5,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
-	<script src="../day19/d19exam6.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('div').click(function(){
+				var num = $(this).attr('value');
+				alert(num + '번째 상자입니다.');
+			});
+
+			$('a>button').click(function(){
+				alert('버튼클릭');
+			});
+		});
+	</script>
 	<title>Document</title>
 	<style>
 	div{
