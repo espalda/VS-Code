@@ -5,36 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
-	<script src="../js/d16checkbox2.js"></script>
+	<link rel="stylesheet" href="d18.css">
 	<title>Document</title>
-	<style>
-	*{
-	box-sizing: border-box;
-}
-.container-box{
-	height: 50px;
-}
-.box{
-	width: 50px;
-	height: 50px;
-	border: 1px solid black;
-	display: inline-block;
-	text-align: center;
-	line-height: 50px;
-	/* 
-	[display: inline-block] instead of
-	float: left;
-	margin-right: 10px; */
-}
-.display-none{
-	display: none;
-}
-ul,li{
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-	</style>
+	<!-- 박스 체크시 사라지고 생기는 기능 -->
+<script>
+	$(document).ready(function(){
+		$('.box-check').change(function(){
+			var isChecked = $(this).prop('checked');
+			if(isChecked){		/* 체크된 경우 */
+			$('.box').eq($(this).val()).addClass('display-none');
+			}
+			else{	/* 체크가 해제된 경우 */
+				$('.box').eq($(this).val()).removeClass('display-none');
+			}
+		})
+	})
+</script>
 </head>
 <body>
 	<div class="container-Box">
