@@ -6,8 +6,18 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
-</head>
 <script>
+	function checklength(id,min,max){ /* id의 최소값, 최대값을 설정하는 함수 구현 */
+		var length = $(id).val().length;
+		if(length > max || length < min)
+			return false;
+		else return true;
+	}
+	function equals(sel1,sel2){ 	/* 매개변수의 값이 같은지 확인하는 함수 구현 */
+		if($(pw1).val() == $(pw2).val())
+			return true;
+				return false;
+	}
 	$(document).ready(function(){
 		$('#pw1').change(function(){
 			if(!checklength('#pw1',8,13)){
@@ -20,21 +30,9 @@
 			}else
 				alert('비밀번호가 일치합니다.');
 		})
-	});
-
-	function checklength(id,min,max){
-		var length = $(id).val().length;
-		if(length > max || length < min)
-			return false;
-		else return true;
-	}
-
-	function equals(sel1,sel2){
-		if($(pw1).val() == $(pw2).val())
-			return true;
-				return false;
-	}
+	}); /* document */
 </script>
+</head>
 <body>
 	<input type="text" id="pw1" placeholder="비밀번호">
 	<input type="text" id="pw2" placeholder="비밀번호확인">

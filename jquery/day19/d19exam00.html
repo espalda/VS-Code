@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
+		/* tr 태그를 클릭하면 checkbox 이외에도 체크가 되게 하는 기능 */
 		$(document).ready(function(){
 		$('tr').click(function(){
 			var pos = $(this).attr('value');
@@ -13,29 +15,30 @@
 			var isChecked = obj.prop('checked');
 			obj.prop('checked',!isChecked);
 		});
-
 		$('tr input[type=checkbox]').click(function(){
 			var isChecked = $(this).prop('checked');
 			$(this).prop('checked',!isChecked);
 		});                                                  
 	});
+	/* 
+	prop 와 attr 차이와 기능: 태그의 요소들을 가져오는 역할
+	.val은 input tag 와 select 에서만 사용 가능
 
+<!-- attr() 사용시 
+HTML attribute 값이 모두 String 으로 넘어옴
+prop() 사용시 
+자바스크립트의 property 값이 넘어오기 때문에 boolean, date, function 등도 가져올 수 있음  -->
 
-	/*
 	html 태그의 현재 위치를 알수 있도록 value값을 지정
 	xxx 클릭
 	1. 현재 위치 확인
 	2. 현재 위치에 있는 체크박스 개체정보 가져오기 eq(번지);
 	3. 현재 체크박스 상태 가져오기
 	4. 현재 체크박스 개체정보에 체크박스 상태 반대로 만들기
+	
 
-	val은 input tag 만 사용 가능
 	*/
 	</script>
-	<title>Document</title>
-	<style>
-
-	</style>
 </head>
 <body>
 	<table class="table">

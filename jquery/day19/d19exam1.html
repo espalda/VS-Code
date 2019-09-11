@@ -7,12 +7,15 @@
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
 		$(document).ready(function(){
+			$('.box').change(function(){	/* input 태그의 값을 출력하는 역할 */
+					$('.tt').html($(this).val());
+			})
 			$('.check-all').change(function(){
-			var isChecked =	$(this).prop('checked');	//true, false로 결과가 나옴
-			//$('input[type=checkbox]').prop('checked', isChecked);
-			$('input[type=checkbox]').each(function(){
-				$(this).prop('checked',isChecked);
-			});
+			var isChecked =	$(this).prop('checked');	/* checked 인 경우 true, 아닌 경우 false로 콘솔에 출력 */
+				/* $('input[type=checkbox]').prop('checked', isChecked); => 각 요소의 값을 설정할수 없음. */
+				$('input[type=checkbox]').each(function(){
+					$(this).prop('checked', isChecked); /* checked 된 상태를 isChecked의 상태로 바꾼다. */
+				});
 			});
 		});
 	</script>
@@ -26,9 +29,10 @@
 <body>
 	<input type="checkbox" class="check-all">
 	<hr>
-	<input type="checkbox" class="box">
-	<input type="checkbox" class="box">
-	<input type="checkbox" class="box">
-	<input type="checkbox" class="box">
+	<input type="checkbox" class="box" value="1">
+	<input type="checkbox" class="box" value="2">
+	<input type="checkbox" class="box" value="3">
+	<input type="checkbox" class="box" value="4">
+	<div class="tt">
 </body>
 </html>

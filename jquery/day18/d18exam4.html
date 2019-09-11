@@ -8,7 +8,7 @@
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('input[type=checkbox]').change(function(){
+			$('input[type=checkbox]').change(function(){ /* input 창의 요소가 checked 이면 콘솔에 체크 라고 뜨는 함수 */
 				if($(this).prop('checked'))
 				console.log('체크');
 				else console.log('해제');
