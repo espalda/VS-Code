@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +8,24 @@
 	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
 	<title>Document</title>
 	<script>
-		$(document).ready(function(){
+		$(document).ready(function () {
+
 			var date = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-			//페이지 로딩시 디폴트 1월로 맞춘다.
-			addDay(1);
-			$('#month').change(function(){
+
+			addDay(1); //함수 호출 - 페이지 로딩시 디폴트값을 1월로 맞춘다.
+
+			$('#month').change(function () {
 				var month = $(this).val();
 				addDay(month);
 			});
-			function addDay(month){
+
+			function addDay(month) {
 				var str = '';
-					for(var i =1; i<=date[month-1]; i++){
-						str += '<option value="'+i+'">'+i+'일'+'</option>'
-					}
-					$('#date').html(str);
+				for (var i = 1; i <= date[month - 1]; i++) {
+					str += '<option value="' + i + '">' + i + '</option>'
 				}
+				$('#date').html(str);
+			}
 		});
 	</script>
 
@@ -40,6 +44,7 @@
 	});
 	-->
 </head>
+
 <body>
 	<select name="month" id="month">
 		<option value="1">01</option>
@@ -59,4 +64,5 @@
 	</select>일
 
 </body>
+
 </html>

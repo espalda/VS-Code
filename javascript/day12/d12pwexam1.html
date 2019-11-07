@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,17 +9,18 @@
 	<script src="pwexam1.js"></script>
 	<script src="pwexam2.js"></script>
 </head>
+
 <body>
 	비밀번호
-	<input type="text" id="pw3" placeholder="비밀번호는 8자리에서 13자리"
-		onchange="checkPw(this.value,8,13);"><br>
+	<input type="text" id="pw3" size="50" placeholder="비밀번호는 8자리에서 13자리" onchange="checkPw(this.value,8,13);"><br>
 	<div id="errorpw3"></div>
 	비밀번호 확인
-	<input type="text" id="pw4"><br>
+	<input type="text" id="pw4" size="50"><br>
 	<div id="errorpw4"></div>
-	<button onclick="checkPwConfirm('pw3','pw4',8,13);">확인</button>
+	<button onclick="checkPwConfirm('pw3', 'pw4', 8, 13);">확인</button>
 	<script>
-		window.onload = function(){};
+		window.onload = function () {};
 	</script>
 </body>
+
 </html>

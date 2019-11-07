@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-		<!-- bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<!-- fontawesome -->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-		<!-- jquery -->
-		<script src="//code.jquery.com/jquery-3.3.1.js"></script>
-		<!-- css -->
-		<script src="/bootstrap/js/bootstrap.js"></script>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"">
+	<!-- jquery -->
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- css -->
+	<script src="/bootstrap/js/bootstrap.js"></script>
 	<style>
 		ul, li, a{
 			
@@ -68,7 +68,7 @@
 	</div>
 
 <script>
-$(".shop-1 > a").click(function(aaa) {
+$(".shop-1 > a").mouseover(function(aaa) {
   $("ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(), aaa.stopPropagation()
 })
 </script>

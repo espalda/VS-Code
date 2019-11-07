@@ -1,51 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <style>
- 
-  .box{
-    width: 100px;
-    height: 30px;
-    border: 3px solid crimson;
-    text-align: center;
-    margin-bottom: 8px;
-    line-height: 30px;
-  }
+    .box {
+      width: 100px;
+      height: 30px;
+      border: 3px solid crimson;
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 30px;
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="box">00:00:00:00</div>
     <button class="btn" onclick="start()">시작/스톱</button>
     <button class="btn" onclick="reset()">리셋</button>
-</div>
-<script>
-  var isRunning = false;
-  var mm = 0; var ss = 0; var MM = 0; var hh = 0;
-  var id; //setInterval()를 통해 할당된 값을 저장
-		function start(){
+  </div>
+  <script>
+    var isRunning = false;
+    var mm = 0;
+    var ss = 0;
+    var MM = 0;
+    var hh = 0;
+    var id; //setInterval()를 통해 할당된 값을 저장
+    function start() {
       //start 버튼를 누른 상황(stop에서 start로 동작)
-      if(!isRunning){
-        id = setInterval(timer,10);
+      if (!isRunning) {
+        id = setInterval(timer, 10);
         isRunning = true;
-      }else{
+      } else {
         isRunning = false;
         clearInterval(id);
       }
     }
 
-    function reset(){
+    function reset() {
       document.getElementsByClassName('box')[0].innerHTML = '00:00:00:00';
       isRunning = false;
-      mm = 0; ss = 0;  MM = 0; hh = 0;
-    }  
+      mm = 0;
+      ss = 0;
+      MM = 0;
+      hh = 0;
+    }
 
-    function timer(){
-      if(isRunning){
+    function timer() {
+      if (isRunning) {
         var strCount = '00:00:00:00';
         mm++;
         strCount = getTime();
@@ -53,16 +60,27 @@
       }
     }
     //나누기, 모드함수, parseInt
-    function getTime(count){
-      if(mm >= 100){ mm -= 100;   ss++; }
-      if(ss >= 60){ ss -= 60;     MM++; }
-      if(MM >= 60){ MM -= 60;     hh++; }
-      return ''+getStr(hh)+':'+getStr(MM)+':'+getStr(ss)+':'+getStr(mm);
+    function getTime(count) {
+      if (mm >= 100) {
+        mm -= 100;
+        ss++;
+      }
+      if (ss >= 60) {
+        ss -= 60;
+        MM++;
+      }
+      if (MM >= 60) {
+        MM -= 60;
+        hh++;
+      }
+      return '' + getStr(hh) + ':' + getStr(MM) + ':' + getStr(ss) + ':' + getStr(mm);
     }
-    function getStr(num){
-      if(num < 10) return '0'+num;
+
+    function getStr(num) {
+      if (num < 10) return '0' + num;
       else return num;
     }
-</script>
+  </script>
 </body>
+
 </html>

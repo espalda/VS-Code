@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 200){
+                    $('.top').fadeIn();
+                }else{
+                    $('.top').fadeOut();
+                }
+            });
+
+            $( '.top' ).click( function() { //에니메이션 효과
+                $( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+                return false;
+            });
+            
+        })
+    </script>
+    <style>
+        .after{
+            width: 500px;
+            height: 2000px;
+            border: 1px solid black;
+        }
+        .all {
+            width: 50px;
+            position: fixed;
+            border: 1px solid black;
+            right: 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="after">
+        <p>First Paragraph</p>
+        <p>Second Paragraph</p>
+        <div class="all">
+            <a href="#" class="top">top</a>
+        </div>
+    </div>
+</body>
+
+</html>

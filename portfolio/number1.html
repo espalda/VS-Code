@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="/bootstrap/js/bootstrap.js"></script>
+	<title>Document</title>
+	<script>
+		$(document).ready(function () {
+			var num = $('#count').val();
+			console.log(num);
+			$('.pre').click(function () {
+				num++;
+				console.log(num);
+				$('#count').val(num);
+			});
+
+			$('.next').click(function () {
+				num--;
+				$('#count').val(num);
+				if (num < 1) {
+					num = 1;
+					$('#count').val(1);
+				}
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<div>
+		<button class="pre"><i class="fas fa-chevron-up"></i></button>
+		<input type="text" id="count" value="1">
+		<button class="next"><i class="fas fa-chevron-down"></i></button>
+	</div>
+</body>
+
+</html>

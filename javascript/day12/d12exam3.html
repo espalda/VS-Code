@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
 </head>
+
 <body>
 	<h1>취미</h1>
 	<form action="">
@@ -24,12 +26,12 @@
 		</div>
 	</form>
 	<script>
-		function check(){
+		function check() {
 			var arr = document.getElementsByTagName('input');
 			var hobbyArr = [];
-			for(var i=0; i<arr.length; i++){
-				if(arr[i].type == 'checkbox'){
-					if(arr[i].checked == true){
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i].type == 'checkbox') {
+					if (arr[i].checked == true) {
 						hobbyArr.push(arr[i].value);
 					}
 				}
@@ -41,4 +43,5 @@
 		}
 	</script>
 </body>
+
 </html>
