@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .jbTitle {
+      text-align: center;
+    }
+
+    .jbMenu {
+      text-align: center;
+      background-color: yellow;
+      padding: 10px 0px;
+      width: 100%;
+    }
+
+    .jbContent {
+      height: 2000px;
+    }
+
+    .fixed {
+      position: fixed;
+      top: 0px;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var offset = $('.menu').offset();
+      $(window).scroll(function () {
+        if ($(document).scrollTop() > offset.top) {
+          $('.menu').addClass('fixed');
+        } else {
+          $('.menu').removeClass('fixed');
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="jbTitle">
+    <h1>Site Title</h1>
+  </div>
+  <div class="menu">
+    <p>
+      First Menu
+      Second Menu
+      Third Menu
+      Fourth Menu
+    </p>
+  </div>
+  <div class="jbContent">
+  </div>
+  </div>
+</body>
+
+</html>
