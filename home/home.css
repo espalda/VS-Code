@@ -43,11 +43,24 @@ ul {
     list-style: none;
 }
 
-.list li {
+.list>li {
     float: left;
     line-height: 10px;
 }
 .list a{
     text-decoration: none;
     color: white;
+}
+
+ol{
+    height: 50px;
+    background: cadetblue;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+ol li{
+    width: 30px;
 }

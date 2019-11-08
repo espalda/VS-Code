@@ -36,7 +36,22 @@
             });
             //ul 태그의 자식태그 li 태그 마지막에 l를 붙이는 함수 생성
 
-            $('.list li:last').siblings().append('ㅣ');
+            
+
+            $('.list>li').click(function(){
+
+                if( !$(this).children().hasClass('active')){
+                    $('.list>li').children().removeClass('active');
+                    $(this).children().addClass('active');
+                    $('.list>li').children().slideUp(500);
+                    $(this).children().slideDown(500);
+                }else{
+                    $(this).children().slideToggle(500);
+                }
+            });
+
+
+           //$('.list li:last').siblings().append('ㅣ');
 
         })
     </script>
@@ -49,7 +64,13 @@
     </div>
     <div class="menu">
         <ul class="list">
-            <li><a href="#">First Menu</a></li>
+            <li class="sub"><a href="#">First Menu</a>
+                <ol>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ol>
+            </li>
             <li><a href="#">Second Menu</a></li>
             <li><a href="#">Third Menu</a></li>
             <li><a href="#">Fourth Menu</a></li>
