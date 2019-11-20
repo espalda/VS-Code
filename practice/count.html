@@ -15,7 +15,7 @@
         }
         #calc {
             margin: 0 auto;
-            margin-top: 100px;
+            margin-top: 50px;
             background: rgb(70, 70, 70);
             width: 250px;
             border-radius: 5px;
@@ -30,7 +30,7 @@
             margin: 0;
             padding: 5px;
         }
-        .button{
+        .button, .text{
             font-size: 50px;
             font-weight: bold;
             color: white;
@@ -44,19 +44,20 @@
             background-color: grey;
             cursor: pointer;
         }
-        .last .button:nth-child(3){
+        .last .text:nth-child(3){
             font-weight: bold;
             color: white;
-            line-height: 38px;
+            line-height: 48px;
             text-align: center;
             margin: 5px;
             padding: 10px;
             float: left;
-            width: 1em;
-            height: 1em;
+            width: 50px;
+            height: 50px;
             background-color: grey;
             cursor: pointer;
             color: yellow;
+            font-size: 20px;
         }
         .clearfix::after{
             content: "";
@@ -64,7 +65,8 @@
             clear: both;
         }
         .num{
-            width: 280px;
+            height: 400px;
+            padding: 5px;
             margin: 0 auto;
         }
         
@@ -112,25 +114,23 @@
         <hr>
 
         <div class="num">
-            <div class="row">
+            
                 <div class="button">1</div>
                 <div class="button">2</div>
                 <div class="button">3</div>
-            </div>
-            <div class="row">
+            
                 <div class="button">4</div>
                 <div class="button">5</div>
                 <div class="button">6</div>
-            </div>
-            <div class="row">
+            
                 <div class="button">7</div>
                 <div class="button">8</div>
                 <div class="button">9</div>
-            </div>
+            
             <div class="row last">
                 <div class="button">0</div>
-                <div class="button del">◀</div>
-                <div class="button clear">clear</div>
+                <div class="text del">◀</div>
+                <div class="text clear">clear</div>
             </div>
             <div class="row">
                 <div class="under_text ok">확인</div>
@@ -153,9 +153,11 @@
 
     $('.del').click(function(){
         var str = $('#res').val();
+        $('#res').val(str.substring(0, str.length-1));
+
+        /* 0부터 length-1 번지까지만 구한다. */
         /* 자바에서는 length() 자바스크립트에서는 length 바로 사용 */
         /* str.substring(str.length-1) 의 결과 값  */
-        $('#res').val(str.substring(0, str.length-1));  /* 0부터 length-1 번지까지만 구한다. */
     })
     
     
