@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+        html, body{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        #calc {
+            margin: 0 auto;
+            margin-top: 100px;
+            background: rgb(70, 70, 70);
+            width: 250px;
+            border-radius: 5px;
+        }
+        #calc p{
+            padding: 5px;
+            margin: 0;
+            color:red;
+        }
+        h1,h2,h3,h4{
+            color:white;
+            margin: 0;
+            padding: 5px;
+        }
+        .button{
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            line-height: 38px;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            width: 1em;
+            height: 1em;
+            background-color: grey;
+            cursor: pointer;
+        }
+        .last .button:nth-child(3){
+            font-weight: bold;
+            color: white;
+            line-height: 38px;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            width: 1em;
+            height: 1em;
+            background-color: grey;
+            cursor: pointer;
+            color: yellow;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .num{
+            width: 280px;
+            margin: 0 auto;
+        }
+        
+        .under_text{
+            font-size: 30px;
+            font-weight: bold;
+            color: orange;
+            line-height: 38px;
+            text-align: center;
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            width: 3em;
+            height: 1.5em;
+            background-color: grey;
+            cursor: pointer;
+        }
+        .under_text:nth-child(2){
+            color: red;
+        }
+        .work_cnt h2{
+            display: inline-block;
+        }
+        .work_cnt input[type=text]{
+            display: inline-block;
+            width: 100px;
+            height: 30px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="calc" class="clearfix">
+        <p>실제 작업 수량을 확인하시어 입력하세요</p>
+        <hr>
+
+        <div>
+            <h2>지시수량 : </h2>
+        </div>
+        <div class="work_cnt">
+            <h2>작업수량 : </h2>
+            <input type="text" id="res">
+        </div>
+
+        <hr>
+
+        <div class="num">
+            <div class="row">
+                <div class="button">1</div>
+                <div class="button">2</div>
+                <div class="button">3</div>
+            </div>
+            <div class="row">
+                <div class="button">4</div>
+                <div class="button">5</div>
+                <div class="button">6</div>
+            </div>
+            <div class="row">
+                <div class="button">7</div>
+                <div class="button">8</div>
+                <div class="button">9</div>
+            </div>
+            <div class="row last">
+                <div class="button">0</div>
+                <div class="button del">◀</div>
+                <div class="button clear">clear</div>
+            </div>
+            <div class="row">
+                <div class="under_text ok">확인</div>
+                <div class="under_text can">취소</div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    
+    $('.button').click(function(){
+        var cnt = $(this).text();
+        var res = $('#res').val();
+        $('#res').val(res+=cnt);
+    });
+
+    $('.clear').click(function(){
+        $('#res').val(' ');
+    })
+
+    $('.del').click(function(){
+        var str = $('#res').val();
+        /* 자바에서는 length() 자바스크립트에서는 length 바로 사용 */
+        /* str.substring(str.length-1) 의 결과 값  */
+        $('#res').val(str.substring(0, str.length-1));  /* 0부터 length-1 번지까지만 구한다. */
+    })
+    
+    
+</script>
+</body>
+
+</html>
