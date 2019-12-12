@@ -25,18 +25,18 @@
 	</style>
 	<script>
 		$(document).ready(function () {
-			console.log($('#one').text());
-			console.log($('#one').html());
-
 			var htmlStr = $('#one').html();
-			htmlStr = '<span>1-1</span>' + htmlStr + '<span>1-2</span>';
+			console.log(htmlStr);
+			htmlStr = '<span>pre() - </span>' + htmlStr + '<span> - next()</span>';
 			$('#one').html(htmlStr);
+			/* html은 코드가 적용되고 text 는 단순 텍스트로 붙여넣어진다.
+				온도 습도 가스누출량 */
 		});
 	</script>
 </head>
 
 <body>
-	<div id="one">0</div>
+	<div id="one">1</div>
 	<div>2</div>
 	<div>3</div>
 	<div>4</div>

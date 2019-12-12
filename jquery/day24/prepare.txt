@@ -1,8 +1,0 @@
-java
-html
-css
-javascript
-jquery
-sql
-jsp
-xml

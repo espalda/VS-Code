@@ -17,21 +17,21 @@
 	<script>
 	$(document).ready(function(){
 		//sibling 나를 제외한 형제들
-		//$('div').siblings().addClass('blue');
+		$('div').siblings().addClass('blue');
 		//형제들중 h1 태그 요소들한 blue  클래스 추가
-		//$('div').siblings('h1').addClass('blue');
+		$('div').siblings('h1').addClass('blue');
 		//div 바로 다음에 오는 형제 요소들 하나에만 blue 클래스 추가
-		//$('div').next().addClass('blue');
+		$('div').next().addClass('blue');
 		//div 바로 다음에 오는 형제 요소들 모두에 blue 클래스 추가
-		//$('div').nextAll().addClass('blue');
+		$('div').nextAll().addClass('blue');
 		//div 바로 다음에 오는 형제 요소들 선택자 모두에 blue 클래스 추가
-		//$('div').nextAll('선택자').addClass('blue');
+		$('div').nextAll('선택자').addClass('blue');
 		//div 바로 다음에 오는 형제 요소들 p태그 전까지의 모든 요소에게 blue 클래스 추가
-		//$('div').nextUntil('p').addClass('blue');
+		$('div').nextUntil('p').addClass('blue');
 		
 		//div 바로 전에 있는 형제 요소들 하나에만 blue 클래스 추가
-		//$('div').prev().addClass('blue');
-		//$('div').prevAll().addClass('blue');
+		$('div').prev().addClass('blue');
+		$('div').prevAll().addClass('blue');
 	});
 	</script>
 </head>

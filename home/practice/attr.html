@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+        span[title]{
+            color: red;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            var count = 0;
+             $('#btnSetter').click(function(){
+                 $('span').attr( 'title', (++count));
+             })
+             $('#btnGetter').click(function(){
+                 $('p').text( $('span').attr('title') );
+             })
+             $('#btnRemove').click(function(){
+                 $('span').removeAttr('title');
+             })
+        })
+
+
+    </script>
+</head>
+<body>
+    <div>안녕하세요. <span>테스트</span>입니다.</div>
+    <p></p>
+    <button id="btnSetter">속성값 설정</button>
+    <button id="btnGetter">속성값 얻기</button>
+    <button id="btnRemove">속성 삭제</button>
+</body>
+</html>

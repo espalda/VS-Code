@@ -11,14 +11,14 @@
 	var pos = 0; //현재 이벤트가 발생된 박스의 위치
 	$('.next').click(function(){
 		pos++;
-		if(pos == 3)	pos = 2;
+		if(pos == 3)	pos = 0;
 		drawBox();
 	});
 
 
 	$('.prev').click(function(){
 		pos--;
-		if(pos == -1)	pos = 0;
+		if(pos == -1)	pos = 2;
 		drawBox();
 			
 	});

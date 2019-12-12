@@ -9,14 +9,21 @@
 		$(document).ready(function(){
 			var cnt = 0;
 			$('#hi').click(function(){
-				var str = '<span>'+ ++cnt +' : 안녕하세요.<span><br>';
-				$(str).prependTo('p');
+				//var str = '<span>'+ ++cnt +' : 안녕하세요.<span><br>';
+				//$(str).prependTo('p');
 			});
 
 			$('#p').click(function(){
 				var obj = document.createElement('p');
 				$('body').prepend(obj);
 			});
+
+
+			var cnt2 = 0;
+			$('#hi').click(function(){
+				var str = '<span>'+ ++cnt + ': +1 증가. </span><br>';
+				$('p').prepend(str);
+			})
 		});
 	</script>
 	<title>Document</title>

@@ -8,18 +8,21 @@
 	<title>Document</title>
 	<script>
 		$(document).ready(function(){
-			/*
-			$().prop();	//자바스크립트의 property를 다룸
-			$().attr();	//html의 property를 다룸
-			*/
 			var propStr = $('a').prop('href');
 			var attrStr = $('a').attr('href');
 			console.log('prop : ' + propStr);
 			console.log('attr : ' + attrStr);
 		});
+
+		/*
+		$().prop();	//자바스크립트의 property를 다룸
+		$().attr();	//html의 property를 다룸
+		*/
 	</script>
 </head>
 <body id="body">
-	<a href="#body">맨 위로</a>
+	<div>
+		<a href="#body">맨 위로</a>
+	</div>
 </body>
 </html>

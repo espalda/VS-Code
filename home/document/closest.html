@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <script>
+        $(function () {
+            $(".me").closest("li:first-child")
+                .css({ //클래스 "me"을 가진 요소 자신과 상위 요소 중에서 첫 번째 <li>요소를 선택하여, 해당 요소의 CSS 스타일을 변경한다.
+                    "border": "2px solid red"
+                });
+
+            $('li').click(function () {
+                $('li').siblings().css({
+                    "border": "2px solid yellow"
+                })
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div>div (할아버지)
+        <ul>ul (부모)
+            <li class="me">li (자식)
+                <span>span (손자)</span>
+            </li>
+            <li class="me">li (자식)
+                <span>span (손자)</span>
+            </li>
+            <li class="me">li (자식)
+                <span>span (손자)</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

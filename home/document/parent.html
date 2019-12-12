@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            $("ul").parent().css({
+                "border": "2px solid red"
+            });
+        });
+    </script>
+    <style>
+  
+        .container{
+            width: 350px;
+        }
+        .container * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 10px;
+            margin: 10px;
+        }
+        .clear::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div>div (할아버지)
+            <ul>ul (부모)
+                <li class="me">li (자식)
+                    <span>span (손자)</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
