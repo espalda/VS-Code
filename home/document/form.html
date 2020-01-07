@@ -9,13 +9,18 @@
     <title>Document</title>
     <script>
         $(document).ready(function () {
+            $('a').attr('href', 'eq.html');
 
+            $('a').attr({
+                title: 'test',
+                href: 'closest.html'
+            });
         })
     </script>
 </head>
 
 <body>
-
+    <a>바로가기</a>
 </body>
 
 </html>

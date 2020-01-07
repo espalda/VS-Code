@@ -13,12 +13,6 @@
                 var checked = $(":checked");
                 $("#count").text("선택한 커피는 총 " + $(':checked').length + "가지 입니다.");
             });
-
-            $('img').click(function(){
-                $('img').attr('width', '400');
-                var imgWidth = $('img').attr('width');
-                $('p').html("변경된 이미지 너비" + $('img').attr('width'));
-            })
         });
     </script>
 </head>
@@ -29,10 +23,6 @@
         <div><input type="checkbox" id="americano"><label for="americano">아메리카노</label></div>
         <div><input type="checkbox" id="caffeLatte"><label for="caffeLatte">카페라떼</label></div>
         <div id="count"></div>
-    </section>
-    <section>
-        <img src="test-img/item-2.jpg" width="100" height="100">
-        <p></p>
     </section>
 </body>
 
