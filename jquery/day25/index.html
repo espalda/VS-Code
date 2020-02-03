@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+        div {
+            width: 40px;
+            height: 40px;
+            margin: 10px;
+            float: left;
+            border: 2px black solid;
+            padding: 2px;
+            text-align: center;
+            line-height: 39px;
+        }
+
+        p {
+            clear: left;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            var now = $('#start');
+            var pos = $('#start').index();
+            now.css('background', '#f99').text(pos);
+
+            $('.prev').click(function () {
+
+                pos--;
+                if (pos == -1) pos = 5;
+                $('div').css('background', '').text('');
+                $('div').eq(pos).css('background', '#f99').text(pos);
+                // now = now.prev();
+                // $('div').css('background', '').text('');
+                // now.css('background', '#f99').text(now.index());
+
+                // if( now.index() == 0 ) 
+                //     return $('div').last().index();
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="start"></div>
+    <div></div>
+    <p><button class="prev">Go to prev</button></p>
+    <p><button class="next">Go to next</button></p>
+</body>
+
+</html>
