@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+    div {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    float: left;
+    border: 2px black solid;
+    padding: 2px;
+    text-align: center;
+    line-height: 39px;
+    }
+    p {
+    clear: left;
+    margin: 10px;
+    }
+    </style>
+    <script>
+    $(document).ready(function(){
+        var now = $('#start');
+        now.css('background', '#f99');
+        now.text(now.index());
+
+        $('button').click(function(){
+            if(now.index() > 0){
+                now = now.prev();
+                $('div').css('background', '');
+                $('div').text('');
+                now.css('background', '#f99');
+                now.text(now.index());
+            }else if(now.index(0)){
+                now.eq(5).css('background', '#f99');
+            }
+        })
+    });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div id="start"></div>
+    <div></div>
+    <p><button>Go to prev</button></p>
+</body>
+</html>
