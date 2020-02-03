@@ -156,7 +156,23 @@
     </div>
 
 <script>
+    $('.button').click(function(){
+        var cnt = $('#res').val().length+1;
+        console.log(cnt);
+        if(cnt == 4) {
+            alert("문자가 80바이트 이하입니다.");
+            $(this).val($(this).val().substring())
+            
+        }
+
+    })
+        
     
+    $('#res').focus(function(){
+
+    });
+        
+     
     $('.button').click(function(){
         var res = $(this).attr("value");
         var str = $('#res').val();
