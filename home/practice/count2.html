@@ -157,14 +157,14 @@
 
 <script>
     $('.button').click(function(){
-        var cnt = $('#res').val().length+1;
-        console.log(cnt);
+        var cnt = $('#res').val().length;
         if(cnt == 4) {
-            alert("문자가 80바이트 이하입니다.");
-            $(this).val($(this).val().substring())
+            console.log( $('#res').val() );
+            alert("길이제한");
+            var p = $('#res').val().slice(0,4);
+            $('$res').text(p);
             
         }
-
     })
         
     
