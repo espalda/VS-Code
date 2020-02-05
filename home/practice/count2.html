@@ -155,46 +155,44 @@
         </div>
     </div>
 
-<script>
-    $('.button').click(function(){
-        var cnt = $('#res').val().length;
-        if(cnt == 4) {
-            console.log( $('#res').val() );
-            alert("길이제한");
-            var p = $('#res').val().slice(0,4);
-            $('$res').text(p);
+    <script>
+        $('.button').click(function(){
+            var cnt = $('#res').val().length;
+            if(cnt == 4) {
+                console.log( $('#res').val() );
+                alert("길이제한");
+                var p = $('#res').val().slice(0,4);
+                $('$res').text(p);
+                
+            }
+        })
             
-        }
-    })
         
+        $('#res').focus(function(){
     
-    $('#res').focus(function(){
-
-    });
-        
-     
-    $('.button').click(function(){
-        var res = $(this).attr("value");
-        var str = $('#res').val();
-        $('#res').val(str += res);
-        
-    });
-
-    $('.clear').click(function(){
-        $('#res').val(' ');
-    })
-
-    $('.del').click(function(){
-        var str = $('#res').val();
-        $('#res').val(str.substring(0, str.length-1));
-
-        /* 0부터 length-1 번지까지만 구한다. */
-        /* 자바에서는 length() 자바스크립트에서는 length 바로 사용 */
-        /* str.substring(str.length-1) 의 결과 값  */
-    })
+        });
+            
+         
+        $('.button').click(function(){
+            var res = $(this).attr("value");
+            var str = $('#res').val();
+            $('#res').val(str += res);
+            
+        });
     
+        $('.clear').click(function(){
+            $('#res').val(' ');
+        })
     
-</script>
+        $('.del').click(function(){
+            var str = $('#res').val();
+            $('#res').val(str.substring(0, str.length-1));
+    
+            /* 0부터 length-1 번지까지만 구한다. */
+            /* 자바에서는 length() 자바스크립트에서는 length 바로 사용 */
+            /* str.substring(str.length-1) 의 결과 값  */
+        })
+        </script>      
 </body>
 
 </html>

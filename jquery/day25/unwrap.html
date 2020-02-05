@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+    ol, li{
+        list-style: none;
+    }
+    .none{
+        display: none;
+    }
+    .red{
+        border: 1px solid red;
+    }
+    .blue{
+        border: 1px solid blue;
+        padding: 10px;
+    }
+    </style>
+    <script>
+        $( document ).ready( function() {
+            //$( 'li' ).unwrap();
+            //현재 요소에서 부모요소 태그를 자동으로 제거
+            console.log($('li').last().index());
+        } );
+    </script>
+</head>
+<body>
+    <ol class="blue">
+        <li class="red">1</li>
+        <li class="red">2</li>
+        <li class="red">3</li>
+    </ol>
+
+    
+</body>
+</html>

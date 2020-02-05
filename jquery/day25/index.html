@@ -32,17 +32,21 @@
             now.css('background', '#f99').text(pos);
 
             $('.prev').click(function () {
-
-                pos--;
-                if (pos == -1) pos = 5;
-                $('div').css('background', '').text('');
-                $('div').eq(pos).css('background', '#f99').text(pos);
-                // now = now.prev();
+                // pos--;
+                // if (pos == -1) pos = 5;
                 // $('div').css('background', '').text('');
-                // now.css('background', '#f99').text(now.index());
+                // $('div').eq(pos).css('background', '#f99').text(pos);
+                
+                now = now.prev();
 
-                // if( now.index() == 0 ) 
-                //     return $('div').last().index();
+                if( now.index() == -1 ){
+                    now = $('div').last();
+                }
+
+                $('div').css('background', '').text('');
+                now.css('background', '#f99').text(now.index());
+                
+                    
             })
         });
     </script>
