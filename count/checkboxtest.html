@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+    .inchk{
+        all:unset;
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        border: 2px solid burlywood;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="inchk" value="불량1" name="1">
+    <input type="checkbox" class="inchk" value="불량2" name="2">
+    <input type="checkbox" class="inchk" value="불량3" name="3">
+    <input type="checkbox" class="inchk" value="불량4" name="4">
+    <script>
+        $('input').click(function(){
+            if($(this).is(':checked')){
+                res = $(this).val();
+                console.log(res);
+                $(this).text(res);
+            }
+        })
+
+        $('input').focusout();
+    </script>
+</body>
+</html>
