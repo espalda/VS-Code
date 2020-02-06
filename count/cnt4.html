@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        html, body{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #count {
+            margin: 0 auto;
+            margin-top: 50px;
+            background: black;
+            width: 250px;
+            border-radius: 5px;
+        }
+        .title{
+            padding: 5px 0 10px 10px;
+            margin: 0;
+            color:red;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .letter{
+            padding: 0 5px 0 10px;
+            display: inline-block;
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        input[type=text]{
+            display: inline-block;
+            width: 100px;
+            height: 30px
+        }
+        .totalBtn{
+            margin: 0 auto;
+            margin-top: 5px;
+            width: 237px;
+            }
+        .btn{
+            font-size: 55px;
+            font-weight: bold;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            margin: 5px;
+            padding: 7px;
+            float: left;
+            width: 55px;
+            height: 55px;
+            background-color: grey;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .del{
+            font-size: 40px;
+            line-height: 45px;
+        }
+        .clear{
+            font-size: 20px;
+            color: yellow;
+        }
+        .cfmbtn div{
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            margin: 5px;
+            padding: 7px;
+            margin-bottom: 10px;
+            float: left;
+            width: 90px;
+            height: 55px;
+            background-color: grey;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .test:first-child {
+            margin-right: 14px;
+            color: orange;
+        }
+        .test:last-child{
+            color: red;
+        }
+        span{
+            color: yellow;
+            font-size: 20px;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <div id="count" class="clearfix">
+            <div class= "title">투입 중량을 입력하세요.</div>
+            <div>
+                <div class="letter">투입수량 : </div>
+                <span>1000</span>
+            </div>
+            <div>
+                <div class="letter">지시수량 : </div>
+                <input type="text" id="res0">
+            </div>
+            <div>
+                <div class="letter">작업수량 : </div>
+                <input type="text" id="res">
+            </div>
+    
+            <div class="totalBtn">
+                <div class="btn" value="1">1</div>
+                <div class="btn" value="2">2</div>
+                <div class="btn" value="3">3</div>
+                
+                <div class="btn" value="4">4</div>
+                <div class="btn" value="5">5</div>
+                <div class="btn" value="6">6</div>
+            
+                <div class="btn" value="7">7</div>
+                <div class="btn" value="8">8</div>
+                <div class="btn" value="9">9</div>
+            
+                <div class="btn" value="0">0</div>
+                <div class="btn del" value="">◀</div>
+                <div class="btn clear">clear</div>
+                
+                <div class="cfmbtn">    
+                    <div class="test">확인</div>
+                    <div class="test">취소</div>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+        var focus = $('input').eq(0).focus();
+        //포커스 맞추는 기능
+        $('input').focus(function(){
+		    focus = $(this);
+	    });
+
+        //버튼 클릭시 숫자 입력
+        $('.btn').click(function(){
+            var val = $(this).attr("value");
+            var str = focus.val();
+            focus.val(str += val);
+        })
+       
+       //길이 제한
+       $('.btn').click(function(){
+            var cnt = focus.val().length;
+            if(cnt == 5) {
+                alert("제한된 길이입니다.");
+                var cut = focus.val().slice(0,4);
+                focus.val(cut);
+            }
+        })
+        //모든 문자 clear
+        $('.clear').click(function(){
+            $(focus).val('');
+        })
+        
+        //한글자씩 지우기
+        $('.del').click(function(){
+            var str = focus.val();
+            focus.val(str.substring(0, str.length-1));
+        })
+
+       
+    </script>
+</body>
+</html>

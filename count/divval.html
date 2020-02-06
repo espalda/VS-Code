@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>check</title>
+    <style>
+    .wrapper{
+        margin: 0 auto;
+        width: 320px;
+        margin-top: 150px;
+    }
+    .chkDef{
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        border: 2px solid burlywood;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .yellow{
+        border:2px solid yellow;
+    }
+    .inchk{
+        all:unset;
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        border: 2px solid burlywood;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div>
+        <div class="chkDef" value="불량1">불량1</div>
+        <div class="chkDef" value="불량2">불량2</div>
+    </div>
+    <div>
+        <div class="chkDef" value="불량3">불량3</div>
+        <div class="chkDef" value="불량4">불량4</div>
+    </div>
+    <div>
+        <div class="chkDef" value="불량5">불량5</div>
+        <div class="chkDef" value="불량6">불량6</div>
+    </div>
+
+    <input size="40" id="res">
+</div>
+<script>
+    /*
+    1. 상자를 클릭하면 상자의 value 값이 input 창으로 전달된다.
+    */
+
+    $('.chkDef').click(function(){   
+        var s = $(this).attr("value");
+        var res = '';
+        console.log(s);
+        $('#res').val(res += s);
+
+    })
+
+    // $('.button').click(function(){
+    //         var res = $(this).attr("value");
+    //         var str = $('#res').val();
+    //         $('#res').val(str += res);
+            
+    //     });
+</script>
+</body>
+</html>
