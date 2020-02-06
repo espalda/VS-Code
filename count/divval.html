@@ -63,7 +63,8 @@
     1. 상자를 클릭하면 상자의 value 값이 input 창으로 전달된다.
     */
 
-    $('.chkDef').click(function(){   
+    $('.chkDef').click(function(){
+        $(this).toggleClass('yellow');   
         var s = $(this).attr("value");
         var res = '';
         console.log(s);

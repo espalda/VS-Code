@@ -28,31 +28,24 @@
         $(document).ready(function () {
 
             var now = $('#start');
-            var pos = $('#start').index();
-            now.css('background', '#f99').text(pos);
+            var pos = now.index();
+            now.css('background', '#f99').text(now.index());
 
             $('.prev').click(function () {
-                // pos--;
-                // if (pos == -1) pos = 5;
-                // $('div').css('background', '').text('');
-                // $('div').eq(pos).css('background', '#f99').text(pos);
-                
-                now = now.prev();
-
-<<<<<<< Updated upstream
-                if( now.index() == -1 ){
-                    now = $('div').last();
-                }
-
-                $('div').css('background', '').text('');
-                now.css('background', '#f99').text(now.index());
-                
+                if( now.index() == 0) {
+                    now = now.siblings('div').last();
+                    $('div').css('background', '').text('');
+                    now.css('background', '#f99').text(now.index());
+                }else{
+                    now = now.prev();
+                    $('div').css('background', '').text('');
+                    now.css('background', '#f99').text(now.index());
                     
-=======
-                // if( now.index() == 0 ) 
-                //     return $('div').last().index();
-                //     return $('div').last().index();
->>>>>>> Stashed changes
+                }
+                   
+                
+
+                
             })
         });
     </script>
@@ -64,6 +57,12 @@
     <div></div>
     <div></div>
     <div id="start"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
     <div></div>
     <p><button class="prev">Go to prev</button></p>
     <p><button class="next">Go to next</button></p>
