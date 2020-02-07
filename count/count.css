@@ -32,10 +32,13 @@ html, body{
     font-weight: bold;
     width: 115px;
 }
-.cntMain input[type=text]{
+.cntMain input{
     display: inline-block;
     width: 100px;
     height: 25px
+}
+.cntMain .gap{
+    width: 80px;
 }
 .totalBtn{
     margin: 0 auto;
@@ -101,9 +104,7 @@ html, body{
     left: 920px;
     top: 158px;
 }
-#temp{
-    width: 80px;
-}
+
 .cntMain span{
     color: yellow;
     font-weight: bold;
