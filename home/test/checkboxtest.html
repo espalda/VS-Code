@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        body{
+        margin: 0 auto;
+        width: 320px;
+        margin-top: 150px;
+        }
+    .inchk{
+        all:unset;
+        display: inline-block;
+        width: 150px;
+        height: 50px;
+        border: 2px solid burlywood;
+        border-radius: 15px;
+        text-align: center;
+        line-height: 50px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .yellow{
+        border:2px solid yellow;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" class="inchk" value="불량1" name="" readonly>
+        <input type="text" class="inchk" value="불량2" name="" readonly>
+    </div>
+    <div>
+        <input type="text" class="inchk" value="불량3" name="" readonly>
+        <input type="text" class="inchk" value="불량4" name="" readonly>
+    </div>
+    <script>
+        $('input').click(function(){
+            $(this).toggleClass('yellow');
+            if($(this).hasClass('yellow')){
+                $(this).attr('name', 'send')
+            }else{
+                $(this).attr('name', '')
+            }
+            console.log($(this).attr('class'));
+        })
+        
+    </script>
+</body>
+</html>

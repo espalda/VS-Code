@@ -1,0 +1,111 @@
+html, body{
+    margin: 0 auto; /* this code will be deleted replace margin:0;*/
+    width: 780px;   /* this code will be deleted */
+    padding:0;
+    box-sizing: border-box;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.cntMain {
+    margin: 0 auto;
+    margin-top: 50px;
+    background: black;
+    width: 250px;
+    border-radius: 5px;
+    display: inline-block;
+}
+.title{
+    padding: 5px 0 10px 10px;
+    margin: 0;
+    color:red;
+    font-size: 18px;
+    font-weight: bold;
+}
+.order{
+    padding: 0 0 0 10px;
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 115px;
+}
+.cntMain input[type=text]{
+    display: inline-block;
+    width: 100px;
+    height: 25px
+}
+.totalBtn{
+    margin: 0 auto;
+    margin-top: 5px;
+    width: 237px;
+    }
+.btn{
+    font-size: 55px;
+    font-weight: bold;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    margin: 5px;
+    padding: 7px;
+    float: left;
+    width: 55px;
+    height: 55px;
+    background-color: grey;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.del{
+    font-size: 40px;
+    line-height: 45px;
+}
+.clear{
+    font-size: 20px;
+    color: yellow;
+}
+.cfmbtn div{
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    line-height: 50px;
+    text-align: center;
+    margin: 5px;
+    padding: 7px;
+    margin-bottom: 10px;
+    float: left;
+    width: 90px;
+    height: 55px;
+    background-color: grey;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.bttm:first-child {
+    margin-right: 14px;
+    color: orange;
+}
+.bttm:last-child{
+    color: red;
+}
+.symbol{
+    background: white;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    left: 920px;
+    top: 158px;
+}
+#temp{
+    width: 80px;
+}
+.cntMain span{
+    color: yellow;
+    font-weight: bold;
+    font-size: 20px;
+}
