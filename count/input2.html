@@ -41,12 +41,6 @@
     <script>
         $('input').click(function(){
             $(this).toggleClass('yellow');
-            if($(this).hasClass('yellow')){
-                $(this).attr('name', 'fault')
-            }else{
-                $(this).attr('name', '')
-            }
-            console.log($(this).attr('class'));
         })
 
         
