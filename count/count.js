@@ -13,8 +13,6 @@ $(document).ready(function(){
         var val = $(this).attr("value");
         var str = focus.val();
         res = focus.val(str += val);
-        console.log('str= ' + str);
-        console.log('res= ' + res.val());
     })
     
     //all number clear
@@ -28,20 +26,25 @@ $(document).ready(function(){
         focus.val(str.substring(0, str.length-1));
     })
 
+    var gap = '+';
     $('.symbol').click(function(){
-        var sym = $(this).text();
-        if(sym == '+'){
-            $(this).text(sym.replace('+', '-'));
-            //console.log(1);
-        }else{
-            $(this).text(sym.replace('-', '+'));
-            //console.log(2);
-        }
+        temper_gap();
     })
 
-    $('.temp .btn').click(function(){
-        
-    })
+    function temper_gap(){
+        if(gap == '+'){
+            gap = '-';
+            $(this).text(gap);
+            res = gap + $('input[name="gap"]').val() + '%';
+            console.log(res);
+        }else if(gap == '-'){
+            gap = '+';
+            $(this).text(gap);
+            res = gap + $('input[name="gap"]').val() + '%';
+            console.log(res);
+        }
+    }
+
     //온도 오차 구하기
     //클릭한 버튼의 value값을 gap의 value값으로 가져온다.
     //01 . input 창의 값을 가져온다
