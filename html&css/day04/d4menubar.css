@@ -49,7 +49,8 @@ a:hover{
 	float: left;
 }
 
-body::after{/*자식중에 float를 이용한 태그가 있는데 해당 태그의 높이를 포함하여
+body::after{
+	/* 자식중에 float를 이용한 태그가 있는데 해당 태그의 높이를 포함하여
 	부모 태그의 높이를 정하고 싶을때
 	부모 태그::after;
 	clear:both;
