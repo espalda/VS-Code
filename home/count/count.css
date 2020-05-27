@@ -1,15 +1,16 @@
-html, body{
-    padding:0;
-    box-sizing: border-box;
+*{
+    box-sizing: border-box; /* 오페라(Opera) */
+    -moz-box-sizing: border-box; /* 파이어폭스(Firefox)*/
+    -webkit-box-sizing: border-box; /* 웹킷(Webkit) & 크롬(Chrome) */
 }
 .cntMain {
     margin: 0 auto;
     padding: 5px;
     background: black;
-    width: 237px;
+    width: 240px;
     height: auto;
-    border-radius: 5px;
     display: inline-block;
+    border: 2px solid white;
 }
 .title{
     padding: 5px;
@@ -19,32 +20,30 @@ html, body{
     font-weight: bold;
 }
 .order{
-    padding: 5px;
     display: inline-block;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-    width: 115px;
+    margin-left: 5px;
 }
-.cntMain input{
+.order input{
+    margin: 5px;
     display: inline-block;
-    width: 98px;
-    height: 25px
-}
-.cntMain .gap{
-    width: 80px;
+    width: 100px;
+    height: 25px;
+    padding: 5px;
 }
 .btn{
     font-size: 55px;
     font-weight: bold;
     color: white;
-    line-height: 50px;
+    line-height: 45px;
     text-align: center;
     margin: 5px;
     padding: 7px;
     float: left;
-    width: 55px;
-    height: 55px;
+    width: 65px;
+    height: 65px;
     background-color: grey;
     cursor: pointer;
     border-radius: 5px;
@@ -57,44 +56,22 @@ html, body{
     font-size: 20px;
     color: yellow;
 }
-.cfmbtn div{
-    font-size: 40px;
+.bttm{
+    all:unset;
+    font-size: 30px;
     font-weight: bold;
     color: white;
-    line-height: 50px;
     text-align: center;
     margin: 5px;
-    padding: 7px;
     float: left;
-    width: 90px;
-    height: 55px;
+    width: 102px;
+    height: 60px;
     background-color: grey;
-    cursor: pointer;
     border-radius: 5px;
 }
-.bttm:first-child {
+.confirm{
     color: orange;
 }
-.bttm:last-child{
-    float: right;
-    color: red;
-}
-.symbol{
-    background: white;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    font-weight: bold;
-    font-size: 20px;
-    text-align: center;
-    cursor: pointer;
-    position: absolute;
-    left: 920px;
-    top: 158px;
-}
-
-.cntMain span{
-    color: yellow;
-    font-weight: bold;
-    font-size: 20px;
+.cancle{
+    color:red;
 }

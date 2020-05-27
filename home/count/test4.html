@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .yellow{
+            border: 1px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="contents">
+    </div>
+
+<script>
+    var regex  = /&&/gi;
+		 $("#contents").on("focusout", function() {
+	         var x = $(this).val();
+	         if (x.length > 0) {
+	             if (x.match(/&&/gi)) {
+	                x = x.replace(/&&/gi, "");
+	             }
+	             $(this).val(x);
+	         }
+	     }).on("keyup", function() {
+	            $(this).val($(this).val().replace(/&&/gi, ""));
+		 });
+
+
+
+    var a = "abb&bccc&&7777&&";
+    var b = a.replace("b", "");
+    var bb = a.replace(/&&/gi, "");
+    console.log(b); 
+    console.log(bb);
+    var c = a.replace(/a/gi, "");
+    console.log(c); 
+</script>
+</body>
+</html>

@@ -1,15 +1,15 @@
-$(document).ready(function(){
+$(document).ready(function() {
     $("input:text[numberOnly]").on("keyup", function() {
         $(this).val($(this).val().replace(/[^0-9]/g,""));
     });
 
     var focus = $('input').eq(0).focus();
-    $('input').focus(function(){
+    $('input').focus(function() {
         focus = $(this);
     });
 
-    $('.btn').click(function(){
-        var val = $(this).attr("value");
+    $('.btn').click(function() {
+        var val = $(this).text();
         var str = focus.val();
             focus.val(str += val);
 
@@ -20,7 +20,7 @@ $(document).ready(function(){
     })
 
     var gap = '+';
-    $('.symbol').click(function(){
+    $('.symbol').click(function() { 
         if(gap == '+'){
             gap = '-';
             $(this).text(gap);

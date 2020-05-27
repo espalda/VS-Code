@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <select id="opt">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+
+    <div id="test"><button class="red">click</button></div>
+    <button id="new">use html</button>
+    
+<script>
+    $('#opt').change(function(){
+        console.log($(this).val());
+    });
+
+    $('#new').click(function(){
+        $('#test').html('<button class="red">click</button>');
+        test();
+    })
+
+    $('#hide').click(function(){
+        $(this).hide();
+    })
+
+    
+
+    function test() {
+        $('.red').click(function(){
+            $(this).css('color', 'red');
+        });
+    }
+    test();
+</script>
+
+<!-- show/hide 로 하면 value값이 계속 들어가있다 -->
+</body>
+</html>
