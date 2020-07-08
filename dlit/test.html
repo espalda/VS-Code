@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="../jquery-ui-1.12.1/themes/redmond/jquery-ui.min.css"> -->
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <!-- base 부분에 사용할 테마를 적어주면 된다 -->
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    
+
+    <!-- 나눔고딕 폰트 -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanumgothic.css">
+    <script>
+        $(function() {
+          $( ".datepicker" ).datepicker({
+            dateFormat: 'yy-mm-dd'
+          });
+        });
+        </script>
+    <title>Document</title>
+    <style>
+        .ui-datepicker{ font-size: 12px; width: 180px; }
+.ui-datepicker select.ui-datepicker-month{ width:50%; font-size: 11px; }
+.ui-datepicker select.ui-datepicker-year{ width:40%; font-size: 11px; }
+        body {
+            text-align: center;
+            font-family: 'Nanum Gothic';
+        }
+        .box1 {
+            float: left;
+            width: 250px;
+            height: 800px;
+            margin: 0 10px;
+        }
+        .box2 {
+            border: 1px solid black;
+            float: left;
+            width: 1100px;
+            height: 800px;
+        }
+        .menu1 {
+            border: 1px solid black;
+            width: 250px;
+            height: 50px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            line-height: 48px;
+        }
+        .menu2 {
+            border: 1px solid black;
+            width: 250px;
+            height: 740px;
+            font-size: 20px;
+            text-align: left;
+        }
+        h2 {
+            padding: 15px 15px 0 25px;
+            text-align: left;
+            display: inline-block;
+            margin-right: 500px;
+        }
+        hr {
+            background-color: rgb(0, 0, 168);
+            height: 5px;
+            width: 1050px;
+            margin: 0 auto;
+            margin-top: 5px;
+        }
+        table {
+            font-size: 13px;
+        }
+        .table-box {
+            margin: 10px;
+        }
+        .t2-th {
+            background-color: #08BDF7;
+            font-size: 11px;
+        }
+        .t1 th{
+            background-color: #EEE;
+        }
+        input[type=radio] {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .datepicker {
+            width: 100px;
+        }
+        .btn-group {
+            display: inline-block;
+            margin-left: 50px;
+            padding-right: 30px;
+        }
+        button {
+            height: 30px;
+            width: 70px;
+            font-size: 13px !important;
+        }
+        .t2 td{
+            height: 50px;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="menu1">생산자재</div>
+        <div class="menu2">
+            <ul>
+                <li>입고지시 조회</li>
+                <li>작업지시 조회</li>
+                <li>출고지시 조회</li>
+                <li>사외출하 바코드 조회</li>
+                <li>검사 진행 등록</li>
+                <li>검사 진행 조회</li>
+                <div class="ui-state-default ui-corner-all">
+                    <span class="ui-icon ui-icon-calendar"></span>
+                </div>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="box2">
+        <h2>검사진행 조회</h2>
+        <div class="btn-group">
+            <button class="ui-button ui-widget ui-corner-all">검색</button>
+            <button class="ui-button ui-widget ui-corner-all">초기화</button>
+            <button class="ui-button ui-widget ui-corner-all">바코드</button>
+        </div>
+        <hr>
+        <div class="table-box">
+            <table class="table table-bordered t1">
+                <tr>
+                    <th>Project No</th>
+                    <td></td>
+                    <th>상위 Unit NO</th>
+                    <td></td>
+                    <th>Supplier NM</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Part No</th>
+                    <td></td>
+                    <th>Part NM</th>
+                    <td></td>
+                    <th>규격</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>발주일</th>
+                    <!-- jquery-ui 달력 이미지 가져오기 나중에-->
+                    <td><input class="datepicker"> - <input class="datepicker"></td>
+                    <th>예정일</th>
+                    <td><input class="datepicker"> - <input class="datepicker"></td>
+                    <th>입고일</th>
+                    <td><input class="datepicker"> - <input class="datepicker"></td>
+                </tr>
+                <tr>
+                    <th>입고여부</th>
+                    <td>
+                        <input type="radio" id="i-all" name="test"><label for="i-all">전체</label>
+                        <input type="radio" id="in" name="test"><label for="in">입고</label>
+                        <input type="radio" id="part" name="test"><label for="part">부분입고</label>
+                        <input type="radio" id="i-not" name="test"><label for="i-not">미입고</label>
+                    </td>
+                    <th>취소여부</th>
+                    <td colspan="4">
+                        <input type="radio" id="c-all" name="test2"><label for="c-all">전체</label>
+                        <input type="radio" id="c-normal" name="test2"><label for="c-normal">정상</label>
+                        <input type="radio" id="c-cancel" name="test2"><label for="c-cancel">취소</label>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table table-bordered t2">
+                <tr class="t2-th">
+                    <th>입고번호</th>
+                    <th>발주번호</th>
+                    <th>Project No</th>
+                    <th>프로젝트명</th>
+                    <th>자재품번</th>
+                    <th>자재 명</th>
+                    <th>규격</th>
+                    <th>발주량</th>
+                    <th>발주일</th>
+                    <th>입고수량</th>
+                    <th>거래처명</th>
+                    <th>진행상태</th> <!--색상 red 로 -->
+                    <th>불량수량</th>
+                    <th>검사자<br>(Login ID)</th>
+                    <th>상태 <br>Comments</th>
+                </tr>
+                <tr>
+                    <td colspan="11" rowspan="3"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="11" rowspan="3"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </body>
+</html>
