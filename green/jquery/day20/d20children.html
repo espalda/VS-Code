@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<title>Document</title>
+	<style>
+	*{border: 1px solid black;}
+	.red{border-color: red;}
+	</style>
+	<script>
+	$(document).ready(function(){
+		$('body').children().addClass('red');		//body tag에 자식들에게 빨간색 테두리추가
+		$('body').children('div').addClass('red');	//body tag의 자식들 중에서 div 태그들만 빨간색 테두리 추가
+		$('body').find('h1').addClass('red');		//body tag의 자손들 중에서 h1 태그들만 빨간색 테두리 추가
+		$('body').find('h1,abc').addClass('red');
+	});
+	</script>
+</head>
+<body>
+	<div>
+		<h1 class="abc">안녕하세요1</h1>
+		<h1>안녕하세요1</h1>
+		<h2>안녕하세요1-2</h2>
+	</div>
+	<div>
+		<span>안녕하세요2</span>
+	</div>
+</body>
+</html>

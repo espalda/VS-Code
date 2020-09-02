@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <style>
+body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 11px;
+}
+
+.title {
+    text-align: center;
+}
+
+.menu {
+    text-align: center;
+    background: linear-gradient(to right, #232526, #4143459a);
+    padding: 10px 0px;
+    width: 100%;
+    height: 30px;
+    color: white;
+}
+
+.content {
+    height: 2000px;
+}
+
+.fix {
+    position: fixed;
+    top: 0px;
+}
+
+a.top {
+    position: fixed;
+    left: 50%;
+    bottom: 50px;
+    display: none;
+    text-decoration: none;
+    color: black;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+.list>li {
+    float: left;
+    line-height: 10px;
+}
+.list a{
+    text-decoration: none;
+    color: white;
+}
+
+ol{
+    height: 50px;
+    background: cadetblue;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+ol li{
+    width: 30px;
+}
+
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            var offset = $('.menu').offset(); //메뉴의 위치파악
+
+            $(window).scroll(function () {
+                if ($(document).scrollTop() > offset.top) {
+                    $('.menu').addClass('fix');
+                } else {
+                    $('.menu').removeClass('fix');
+                }
+
+                if ($(this).scrollTop() > 200) {
+                    $('.top').fadeIn();
+                } else {
+                    $('.top').fadeOut();
+                }
+
+            }); //window.scroll
+
+            $('.top').click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 400);
+                return false;
+            });
+            //ul 태그의 자식태그 li 태그 마지막에 l를 붙이는 함수 생성
+
+            
+
+            $('.list>li').click(function(){
+
+                if( !$(this).children().hasClass('active')){
+                    $('.list>li').children().removeClass('active');
+                    $(this).children().addClass('active');
+                    $('.list>li').children().slideUp(500);
+                    $(this).children().slideDown(500);
+                }else{
+                    $(this).children().slideToggle(500);
+                }
+            });
+
+
+           //$('.list li:last').siblings().append('ㅣ');
+
+        })
+    </script>
+    
+</head>
+
+<body>
+    <div class="title">
+        <h1>Site Title</h1>
+    </div>
+    <div class="menu">
+        <ul class="list">
+            <li class="sub"><a href="#">First Menu</a>
+                <ol>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ol>
+            </li>
+            <li><a href="#">Second Menu</a></li>
+            <li><a href="#">Third Menu</a></li>
+            <li><a href="#">Fourth Menu</a></li>
+        </ul>
+    </div>
+    </div>
+    <div class="content">
+        추가할 컨텐츠
+        <ul>
+            <li>메뉴바 사이에 ㅣ 표시
+                - 마지막 요소를 제외하고 사이사이에만 l 을 붙인다. jquery 이용 (완료)
+            </li>
+            <li>체크박스 항목 표시</li>
+            <li>박스 홈페이지 레이아웃 설정</li>
+            <li>페이지 위로 올리기 추가</li>
+            <li></li>
+        </ul>
+    </div>
+    <a href="#" class="top">위로 보기</a>
+</body>
+
+</html>

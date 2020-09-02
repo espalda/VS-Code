@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<input type="text" id="test" value="">
+	<button onclick="message()">버튼</button>
+	<script>
+		function message() {
+			var num = document.getElementById('test');
+			alert(num.value); //경고창 생성
+			num.value = ''; //입력창 초기화
+		}
+	</script>
+</body>
+
+</html>

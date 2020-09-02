@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//var arr = [10];
+		//push, pop 뒤쪽에서 추가, 제거
+		var arr = new Array();
+		arr.push("1");
+		arr.push(2);
+		console.log(arr);
+		console.log('arr:' + arr);
+
+		var res = arr.pop();
+		console.log(arr);
+		console.log(res);
+
+		arr.push(2);
+		console.log(arr);
+
+		//[shift, unshift]
+		//앞쪽에서 추가, 제거
+		console.log(arr);
+		arr.unshift("2");
+		console.log(arr);
+		arr.shift("2");
+		console.log(arr);
+
+		//join('구분자')
+		//각 배열의 원소값 사이에 구분자를 추가하여 하나의 문자열을 만들어주는 함수
+		var str = arr.join("|");
+		console.log(str);
+
+		//indexOf(검색할 글자) = 검색한 글자의 번지 (없으면 -1)
+		arr[1] = 3;
+		console.log(arr);
+
+		arr[3] = 4;
+		console.log(arr);
+		console.log('배열의 길이:' + arr.length);
+		console.log('검색한 변수의 번지 확인:' + arr.indexOf(1)); //없으면 -1
+		console.log('검색한 변수의 번지 확인:' + arr.indexOf("1")); //0번지에 존재
+
+		arr.push('1');
+		console.log(arr);
+		console.log(arr.indexOf("1", 1)); //1번지 부터 내가 원하는 값이 있는지 확인
+
+		var cnt = 0;
+		var idx = 0;
+		while (true) {
+			idx = arr.indexOf("1", idx);
+			if (idx == -1) break;
+
+			idx = idx + 1;
+			cnt++;
+		}
+		console.log('arr에 있는 문자열1의 개수:' + cnt);
+
+		//lastIndexOf
+		//뒤에서 부터 변수의 번지 찾음
+		console.log(arr.lastIndexOf('1'));
+		cnt = 0;
+		idx = arr.length - 1;
+		while (true) {
+			idx = arr.lastIndexOf("1", idx);
+			if (idx == -1)
+				break;
+			if (idx == 0) {
+				cnt++;
+				break;
+			}
+			idx = idx - 1;
+			cnt++;
+		}
+		console.log('arr에 있는 문자열1의 개수:' + cnt);
+
+		//reverse
+		//원본 배열을 거꾸로 변환하고 해당 배열을 리턴
+		console.log('<---  reverse  --->');
+		var arr2 = arr.reverse();
+		console.log(arr);
+		console.log(arr2);
+		var arr = arr2.reverse();
+		console.log(arr);
+		console.log(arr2);
+
+		//slice(start, end)
+		//start번지부터 end-1 번지까지 복사해서 새로운 배열 생성
+		console.log('<---  slice  --->');
+		var arr3 = arr.slice(0, 1);
+		console.log(arr3);
+		console.log(arr);
+		var arr3 = arr.slice(0, arr.length - 1);
+		console.log(arr3);
+		console.log(arr);
+
+		//splice(start, deleteCount)
+		//start번지부터 deleteCount 개수만큼 삭제한 후 삭제한 배열을 리턴
+		console.log('<---  splice  --->');
+		var arr4 = arr.splice(0, 2);
+		console.log(arr4);
+		console.log(arr);
+	</script>
+</body>
+
+</html>

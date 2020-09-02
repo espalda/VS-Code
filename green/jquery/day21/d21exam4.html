@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="//code.jquery.com/jquery-3.4.1.js"></script>
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.menu div{
+			border: 1px solid black;
+			width: 200px;
+			height: 30px;
+			float: left;
+			font-size: 11px;
+			text-align: center;
+			line-height: 28px;
+			/* display: inline-block; */
+		}
+		.sub-menu{
+			border: 1px solid black;
+			width: 200px;
+			position: absolute;
+			font-size: 11px;
+			text-align: center;
+			line-height: 28px;
+		}
+		.color{
+			background-color: rgb(203, 220, 253);
+		}
+	</style>
+	<script>
+		$(document).ready(function(){
+			var subMenu = [
+				['메뉴1-1','메뉴1-2','메뉴1-3','메뉴1-4'],
+				['메뉴2-1','메뉴2-2','메뉴2-3','메뉴2-4'],
+				['메뉴3-1','메뉴3-2','메뉴3-3','메뉴3-4'],
+			];
+			var left = [0,200,400,600];
+			var top = 38;
+
+			$('.menu div').click(function(){
+				$('.menu div').removeClass('color');
+				$(this).addClass('color');
+
+				var numStr = $(this).text();
+				var num = numStr.substring(numStr.length-1);
+				var str = '';
+				for(var i=0; i<subMenu[num-1].length; i++){
+					str += '<div>'+subMenu[num-1][i]+'</div>'
+				}
+				$('.sub-menu').html(str);
+				$('.sub-menu').css({
+					top:top+'px',
+					left:left[num-1]+'px',
+					display:'none'
+				})
+				$('.sub-menu').slideDown(500);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="menu">
+		<div>메뉴 * 1</div>
+		<div>메뉴 * 2</div>
+		<div>메뉴 * 3</div>
+	</div>
+	<div class="sub-menu"></div>
+
+</body>
+</html>

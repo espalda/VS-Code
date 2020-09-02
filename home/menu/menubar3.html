@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"">
+	<!-- jquery -->
+	<script src="//code.jquery.com/jquery-3.3.1.js"></script>
+	<!-- css -->
+	<script src="/bootstrap/js/bootstrap.js"></script>
+	<style>
+		ul, li, a{
+			
+			list-style: none;
+			padding-left:0px;
+			letter-spacing: 3px;
+		}
+		.shop-1 a{
+			width: 150px;
+			text-decoration: none;
+			font-size: 12px;
+		}
+		ul a{
+			width: 50px;
+			color: black;
+			background-color: #ededed;
+			text-decoration: none;
+			display: block;
+			padding: 12px;
+			font-size: 12px;
+			border: 1px solid #b97f6d;
+			border-top: 0 !important;
+		}
+		ul a:hover{
+			width: 150px;
+			color: #ffffff;
+			background-color: #123132;
+			text-decoration: none;
+			display: block;
+			padding: 12px;
+			font-size: 12px;
+			border: 1px solid #b97f6d;
+			border-top: 0 !important;
+		}
+		.shop-list{
+			display: none;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<div class="shop-1">
+			<a>shop</a>
+			<ul class="shop-list">
+				<li><a href="#">Succulents</a></li>
+				<li><a href="#">Cactus</a></li>
+				<li><a href="#">Plant</a></li>
+				<li><a href="#">Hanging plant</a></li>
+				<li><a href="#">Goods</a></li>
+			</ul>
+		</div>
+	</div>
+
+<script>
+$(".shop-1 > a").mouseover(function(aaa) {
+  $("ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(), aaa.stopPropagation()
+})
+</script>
+</body>
+</html>

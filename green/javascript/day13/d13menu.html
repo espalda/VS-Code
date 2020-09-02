@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" href="d13menu.css">
+	<!-- 
+	link 순서 : 한 요소 태그나 클래스의 우선순위 같을때 덮어쓰기가 일어나지 때문에 link 순서 중요	
+	bootstrap
+	font-asome
+	api.css
+	내가 만든 global.css
+	내가 만든 부분.css
+	내가 만든 현재 페이지에서 쓰이는 -->
+		<title>Document</title>
+		<style>
+		.icon{
+			margin: 8px 8px 0 0;
+			float: right;
+			width: 100px;
+			height: 200px;
+			border: 1px solid black;
+			background-color: ghostwhite;
+			display: none;
+		}
+		.display-block{
+			display: block;
+		}
+		.display-none{
+			display: none;
+		}
+		.close{
+			margin: 8px 8px 0 0;
+			font-size: 12px;
+			border: 1px solid black;
+			float: right;
+		}
+		</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<div class="icon" id="i">
+				<button class="close" onclick="box('i')">닫기</button>
+			</div>
+			<button class="btn" type="submit" onclick="box('i')">
+				<i class="fas fa-bars"></i>
+			</button>
+		</div>
+	</div>
+<script>
+	function box(id){
+		document.getElementById(id).classList.toggle('display-block');
+	}
+	function close(id){
+		document.getElementById(id).classList.toggle('display-none');
+	}
+</script>
+
+</body>
+</html>
