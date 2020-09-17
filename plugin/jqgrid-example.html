@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" href="jquery.jqGrid-4.4.3/css/ui.jqgrid.css">
+
+    <script src="jquery.jqGrid-4.4.3/js/jquery-1.7.2.min.js"></script>
+    <script src="jquery.jqGrid-4.4.3/js/i18n/grid.locale-kr.js"></script>
+    <script src="jquery.jqGrid-4.4.3/js/jquery.jqGrid.min.js"></script>
+
+    <script>
+       
+        $(document).ready(function(){
+
+            $("#list1").jqGrid({
+                url:'server.php?q=1',
+                datatype: "xml",
+                colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
+                colModel:[
+                    {name:'id',index:'id', width:70},
+                    {name:'invdate',index:'invdate', width:70},
+                    {name:'name',index:'name', width:100},
+                    {name:'amount',index:'amount', width:50, align:"right"},
+                    {name:'tax',index:'tax', width:50, align:"right"},		
+                    {name:'total',index:'total', width:50,align:"right"},		
+                    {name:'note',index:'note', width:100, sortable:false}		
+                ],
+                rowNum:10,
+                rowList:[10,20,30],
+                pager: jQuery('#pager1'),
+                sortname: 'id',
+                viewrecords: true,
+                sortorder: "desc",
+                caption:"XML Example"
+            }).navGrid('#pager1',{edit:false,add:false,del:false});	
+
+    });
+        
+    </script>
+    
+</head>
+<body>
+    <table id="list1"></table>
+    <div id="pager1"></div>
+</body>
+</html>
