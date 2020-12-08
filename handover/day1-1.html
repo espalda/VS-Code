@@ -4,8 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>making box</title>
+    <!-- 
+    박스 만드는 방법
+    1. float 사용
+    2. flex 사용
+    3. grid 사용
+    HTML 문서 구조에서 부모 요소가 자식 요소를 감싸고 있을 때,
+    자식 요소에게 float 형식을 적용하면 부모 요소가 자식 요소를 더 이상 감싸지 않게되고 높이 값을 파악하지 못하게 되는 버그가 발생
+    부모 요소의 높이 값이 0px로 출력
+    -->
+    <style>
+        div {
+            box-sizing: border-box;
+        }
+        .a {
+            border: 1px solid black;
+            width: 800px;
+        }
+        .clearfix::after {
+        content: "";
+        clear: both;
+        display: block;
+        }
+        .b {
+            border: 1px solid red;
+            width: 300px;
+            height: 300px;
+        }
+        .c {
+            border: 1px solid green;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .d {
+            border: 1px solid yellow;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .e {
+            border: 1px solid blue;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        
+    </style>
 </head>
 <body>
-    
+    <!-- clearfix -->
+    <div class="a">
+        <div class="b"></div>
+        <div class="c"></div>
+        <div class="d"></div>
+        <div class="e"></div>
+    </div>
 </body>
 </html>
