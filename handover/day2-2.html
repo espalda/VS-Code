@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        window.onload = function(){
+            
+            
+        }
+        
+        $(document).ready(function(){
+            $('#test3').click(function(){
+                test();
+            })
+        })
+        function test() {
+           // window.location.reload();
+            var str = "<b><font color='red'>"+Math.random()+"</font></b>";
+            var a3 = document.getElementById('test3');
+            a3.innerHTML = "<b><font color='red'>"+Math.random()+"</font></b>";
+        }
+       
+    </script>
+</head>
+<body>
+    <input id="test" value="15000">
+    <button onclick="rrr();">초기화</button>
+    <br>
+    <input id="test2" value="20000" />
+    <button onclick="typeof1();">텍스트</button>
+    <button id="test3">버튼</button>
+</body>
+</html>
