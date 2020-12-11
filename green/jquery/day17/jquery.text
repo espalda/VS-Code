@@ -128,8 +128,8 @@ $('div').not('#one').addClass('blue');
 div요소에 부모가 body 태그인지에 대한 결과를 true, false로 출력
 alert($('div').parent().is('body'));
 
-$().val() input tag의 값을 가져옴
-$().val(값) input tag 의 값을 설정함 value of input tag set value;
+$().val() input 의 값을 가져옴
+$().val(값) input 의 값을 설정함 value of input tag set value;
 $().text() 요소의 텍스트를 가져옴
 $().text(문자열) 요소의 텍스트를 설정함
 $().html() 요소의 html 코드를 가져옴

@@ -143,16 +143,16 @@
             <input type="text" id="in" placeholder=""/>
         </div>
         <div class="box3">
-            <div class="num1"><span>1</span></div>
-            <div class="num1"><span>2</span></div>
-            <div class="num1"><span>3</span></div>
-            <div class="num1_2"><span>4</span></div>
-            <div class="num1_2"><span>5</span></div>
-            <div class="num1_2"><span>6</span></div>
-            <div class="num1_3"><span>7</span></div>
-            <div class="num1_3"><span>8</span></div>
-            <div class="num1_3"><span>9</span></div>
-            <div class="num1_4"><span>0</span></div> 
+            <div class="num1 num"><span>1</span></div>
+            <div class="num1 num"><span>2</span></div>
+            <div class="num1 num"><span>3</span></div>
+            <div class="num1_2 num"><span>4</span></div>
+            <div class="num1_2 num"><span>5</span></div>
+            <div class="num1_2 num"><span>6</span></div>
+            <div class="num1_3 num"><span>7</span></div>
+            <div class="num1_3 num"><span>8</span></div>
+            <div class="num1_3 num"><span>9</span></div>
+            <div class="num1_4 num"><span>0</span></div> 
             <div class="num1_4" id="del"><span>◀</span></div>
             <div class="num2" id="clear"><span>Clear</span></div>
         </div>
@@ -164,22 +164,21 @@
 
     <script>
         var test = $('#in').val();
-        $('.box3 div').click(function(){
+        $('.num').click(function(){
            var now = $(this).text();
            test += $(this).text();
            $('#in').val(test);
-           
-           
-
         })
         $('#clear').click(function() {
-            $('#in').val('');
+            test = '';
+            $('#in').val(test);
         })
         $('#del').click(function() {
-
+           var inp = $('#in').val();
+            var res = inp.substring(0,inp.length-1);
+            $('#in').val(res);
+            test = res;
         })
-
-        
     </script>
 </body>
 </html>

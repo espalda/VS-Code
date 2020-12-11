@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        .s1 {color: red;}
+        .s2 {color: blue;}
+        .s3 {color: green;}
+        .s4 {color: brown;}
+      </style>
+      
+      <script>
+        $( document ).ready( function() {
+          var i=1
+          $( 'p' ).each( function() {
+            $( this ).addClass( 's' + i );
+            i = i + 1;
+          } );
+        } );
+      </script>
+</head>
+<body>
+    <p>Lorem</p>
+    <p>Ipsum</p>
+    <p>Dolor</p>
+    <p>Amet</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+        .container {
+            width: 500px;
+            height: 300px;
+            border: 1px solid salmon;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>옵션 추가</h4>
+        <div class="tr">
+            <input type="text" class="opt"/><button class="add">추가</button><button class="del">삭제</button>
+        </div>
+    </div>
+    <script>
+        //show/hide
+        //append
+        // $('.add').click(function(){
+        //     $('.container').append('<div class="tr"><input type="text" class="opt"/><button class="add">추가</button><button class="del">삭제</button></div>');
+        // })
+
+        $(document).on('click', ('.add'), function(){
+            $('.container').append('<div class="tr"><input type="text" class="opt"/><button class="add">추가</button><button class="del">삭제</button></div>');
+        });
+
+        $('.del').click(function(){
+            $('.tr').remove();
+        })
+    </script>
+</body>
+</html>

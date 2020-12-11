@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
+<body>
+    <table class="table table-hover w-50">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="all"/>
+                </th>
+                <th>메뉴</th>
+                <th>가격</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>americano</td>
+                <td class="price">4000원</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>cafelatte</td>
+                <td class="price">4500원</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>ice-americano</td>
+                <td class="price">5000원</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox">
+                </td>
+                <td>ice-cafelatte</td>
+                <td class="price">5500원</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">총가격</td>
+                <td id="total"></td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        var total = 0;
+        $('#all').click(function(){
+            console.log($('#all').is(':checked'));
+            if($(this).is(':checked')) {
+                $('input[type=checkbox]').attr('checked', true);
+                $('.price').each(function() {
+                var prc = $(this).text();
+                var it = prc.substring(0,prc.length-1);
+                console.log(total);
+                total += parseInt(it);
+                $('#total').html(total);
+            })
+            } else {
+                $('input[type=checkbox]').attr('checked', false);
+                total = 0;
+                $('#total').html(total);
+                
+            }
+            console.log('test');
+        })
+    </script>
+</body>
+</html>
