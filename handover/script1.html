@@ -27,28 +27,28 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            <tr class="trchk">
                 <td>
                     <input type="checkbox">
                 </td>
                 <td>americano</td>
                 <td class="price">4000원</td>
             </tr>
-            <tr>
+            <tr class="trchk">
                 <td>
                     <input type="checkbox">
                 </td>
                 <td>cafelatte</td>
                 <td class="price">4500원</td>
             </tr>
-            <tr>
+            <tr class="trchk">
                 <td>
                     <input type="checkbox">
                 </td>
                 <td>ice-americano</td>
                 <td class="price">5000원</td>
             </tr>
-            <tr>
+            <tr class="trchk">
                 <td>
                     <input type="checkbox">
                 </td>
@@ -58,15 +58,46 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2">총가격</td>
+                <td colspan="2" class="text-center">총가격</td>
                 <td id="total"></td>
             </tr>
         </tfoot>
     </table>
     <script>
+        // attr은 속성값 (스타일, 태그안의 속성값 href)
+        // prop은 체크 상태값
         var total = 0;
+        $('.trchk input[type=checkbox]').click(function(){
+            var tr = $(this).parents('.trchk').find('.price').text();
+            var tr2 = tr.substring(0, tr.length-1);
+            if($(this).is(':checked')){
+                $('#all').prop('checked', false);
+                total += parseInt(tr2);
+                console.log(total)
+                $('#total').text(tota +'원');
+            } else {
+                $('#all').prop('checked', false);
+                total -= parseInt(tr2);
+                console.log(total)
+                $('#total').text(total +'원');
+            }
+            
+            var is_check = 0;
+            $('.trchk input[type=checkbox]').each(function(){
+                if($(this).is(':checked')){
+                    console.log(1);
+                } else {
+                    is_check = 1;
+                    console.log(0);
+                }
+            })
+            if(is_check == 0) {
+                $('#all').prop('checked', true);
+            }
+        })
+        
         $('#all').click(function(){
-            console.log($('#all').is(':checked'));
+            total = 0;
             if($(this).is(':checked')) {
                 $('input[type=checkbox]').attr('checked', true);
                 $('.price').each(function() {
@@ -74,16 +105,18 @@
                 var it = prc.substring(0,prc.length-1);
                 console.log(total);
                 total += parseInt(it);
-                $('#total').html(total);
+                $('#total').html(total +'원');
             })
             } else {
                 $('input[type=checkbox]').attr('checked', false);
                 total = 0;
-                $('#total').html(total);
-                
+                $('#total').html(total + '원');
             }
-            console.log('test');
         })
+
+
+
+
     </script>
 </body>
 </html>

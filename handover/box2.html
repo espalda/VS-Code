@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<title>Document</title>
+	<style>
+	.bg-black{background-color: black;}
+	.bg-blue{background-color: blue;}
+	.bg-red{background-color: red;}
+	.bg-yellow{background-color: yellow;}
+	.box{
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		border: 1px solid black;
+	}
+	.container{
+		font-size: 12px;
+	}
+	label {
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+	<div class="divBox">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+	<div class="container">
+		<input type="checkbox" id="black"><label for="black">검정색</label><br>
+		<input type="checkbox" id="blue"><label for="blue">파란색</label><br>
+		<input type="checkbox" id="red"><label for="red">빨간색</label><br>
+		<input type="checkbox" id="yellow"><label for="yellow">노란색</label>
+	</div>
+
+	<script>			 
+	/*
+			//체크 순서 상관없이 색깔 표시
+			$('input[type="checkbox"]').change(function(){										//체크박스 값이 바뀔 때마다
+				$('div.divBox div').removeClass();  														//색깔이 담긴 박스의 클래스를 제거
+				$('div.divBox div').addClass('box')    													//box 클래스를 추가
+				var arr = new Array();																					//체크한 순서 상관없이 지역 변수로 배열을 생성
+				$('input[type="checkbox"]').each(function(){										//체크박스를 하나씩 확인
+					if( $(this).prop('checked') ){																//체크돼 있으면 
+						arr.push( $(this).attr('id') );   													//배열에 색깔을 추가
+					}
+				});
+				if( arr.length > 0 ){																						//배열에 색깔이 담겼으면 (체크된 값이 있다면)
+					for( var i=0; i<arr.length; i++ ){														//배열의 길이만큼 반복
+						$('div.divBox div').eq(i).addClass('bg-'+arr[i]);						//박스의 i번지에 i번지 색깔을 추가
+					}
+				}
+			});
+*/
+				//체크한 순서대로 색깔 표시
+				var colorBox = new Array(); 																		//체크 순서 저장을 위해 전역변수 생성
+				$('input[type="checkbox"]').change(function(){									//체크박스 값이 바뀔 때마다
+					$('div.divBox div').removeClass();  													//색깔이 담긴 박스의 클래스를 제거
+					$('div.divBox div').addClass('box')    												//box 클래스를 추가
+					var index = colorBox.indexOf( $(this).attr('id') );						//해당 체크박스의 색깔을 전역변수에서 검색
+					if( $(this).prop('checked') ){																//지금 체크한 경우
+						if( index == -1 ){																					//전역변수에 해당 색깔이 없을 경우
+							colorBox.push( $(this).attr('id') );   										//배열에 색깔을 추가
+						}
+					}else{ 																												//지금 체크 해제한 경우
+						if( index > -1 ){																						//전역변수에 해당 색깔이 있으면
+							colorBox.splice( index, 1 );   														//전역변수에서 색깔을 제거
+						}
+					} 
+					if( colorBox.length > 0 ){																		//배열에 색깔이 담겼으면 (체크된 값이 있다면)
+						for( var i=0; i<colorBox.length; i++ ){											//배열의 길이만큼 반복
+							$('div.divBox div').eq(i).addClass('bg-'+colorBox[i]);		//박스의 i번지에 전역변수 i번지 색깔을 추가
+						}
+					}
+				});      
+
+			// A = [1, 2, 3, 4, 5, 6, 7]
+			// B = A.slice(0,3) : A의 0번지부터 3개를 B로 복사 -> 결과 :  B = [1, 2, 3]
+			// B = A.splice( 1, 2 ) : A의 1번지부터 2개를 제거한 뒤 해당 값을 반환 -> 결과 : A = [1, 4, 5, 6, 7] / B = [2, 3]
+			// slice = 원본 유지, splice = 원본 제거
+	</script>
+</body>
+</html>
